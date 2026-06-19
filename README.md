@@ -1,16 +1,16 @@
-### Summer reaseach update 06/18/2026
-Presented my research idea to Prof Chen in today's meeting. He liked my idea and said my idea is "novel".  
-I presented my Research Question:
+# Summer reaseach update 06/18/2026
+I presented my research idea to Prof. Chen during today's meeting. He liked the idea and said it was novel. 
+My Research Question:
 Can adaptive influence balancing improve debate quality?
 Can minority viewpoints be preserved long enough to improve final decisions?
 Can process interventions improve reliability and calibration?
 ## Here are my recommendations:
-# Experimental Setting 1: Minority Protection
+### Experimental Setting 1: Minority Protection
 Minority agents receive additional reasoning budget
 Extra evidence generation
 Additional speaking opportunities
 Protect potentially valuable dissenting opinions
-# Experimental Setting 2: Devil's Advocate
+### Experimental Setting 2: Devil's Advocate
 Dominant agents must challenge their own position
 Generate counterarguments
 Reduce overconfidence and groupthink
