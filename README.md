@@ -4,13 +4,23 @@ My Research Question:
 Can adaptive influence balancing improve debate quality?
 Can minority viewpoints be preserved long enough to improve final decisions?
 Can process interventions improve reliability and calibration?
-## Here are my recommendations:
-### Experimental Setting 1: Minority Protection
+## Here are my recommendationed experimentations:
+### Experimental Setting 1: Baseline
+Original paper setup
+Fixed debate protocol
+No intervention
+Reference point for comparison
+### Experimental Setting 2:
+Penalty-to-Loser
+Agents losing influence become more assertive
+Require stronger defense of their position
+Encourage persistence of alternative viewpoints
+### Experimental Setting 3: Minority Protection
 Minority agents receive additional reasoning budget
 Extra evidence generation
 Additional speaking opportunities
 Protect potentially valuable dissenting opinions
-### Experimental Setting 2: Devil's Advocate
+### Experimental Setting 4: Devil's Advocate
 Dominant agents must challenge their own position
 Generate counterarguments
 Reduce overconfidence and groupthink
