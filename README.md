@@ -4,7 +4,7 @@ My Research Question:
 Can adaptive influence balancing improve debate quality?
 Can minority viewpoints be preserved long enough to improve final decisions?
 Can process interventions improve reliability and calibration?
-## Here are my recommendationed experimentations:
+## Here are my recommendationed experiments:
 ### Experimental Setting 1: Baseline
 Original paper setup
 Fixed debate protocol
