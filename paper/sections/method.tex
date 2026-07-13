@@ -1,0 +1,148 @@
+%% ============================================================
+%%  4.  METHOD: ADAPTIVE INFLUENCE BALANCING
+%% ============================================================
+\section{Adaptive Influence Balancing}
+\label{sec:method}
+
+We introduce \textbf{Adaptive Influence Balancing} (AIB), a framework that
+monitors live process diagnostics during multi-agent debates and selectively
+intervenes to protect minority agents whose reasoning shows signs of being
+prematurely eliminated.
+
+%% ----------------------------------------------------------
+\subsection{Problem Formulation}
+\label{sec:formulation}
+%% ----------------------------------------------------------
+
+Let $N$ agents debate a multiple-choice question $x$ with label set
+$\mathcal{H}$ over $T$ rounds.
+After round $t$, agent $i$ holds answer $h_i^{(t)}\!\in\!\mathcal{H}$,
+confidence $c_i^{(t)}\!\in\![0,1]$, and a free-text explanation
+$e_i^{(t)}$.
+The \emph{support share} of hypothesis $h$ at round $t$ is
+\begin{equation}
+  s_t(h)=\frac{1}{N}\sum_{i=1}^{N}\mathbf{1}[h_i^{(t)}=h].
+\end{equation}
+Agent $i$ is a \emph{minority agent} when its current answer has strictly
+less support than the most popular answer:
+$s_t(h_i^{(t)}) < \max_{h\in\mathcal{H}} s_t(h)$.
+
+We introduce two evaluation metrics beyond accuracy.
+\textbf{Consensus Reliability} (CR) measures whether reached consensus is
+correct:
+$\text{CR} = P(\text{correct}\mid\text{consensus reached})$.
+\textbf{Premature Elimination Rate} (PER) measures the fraction of correct
+hypotheses discarded before the final round:
+\begin{equation}
+  \text{PER} = \frac{\bigl|\{h : h=y,\;h\!\in\!\mathcal{H}_{\mathrm{proposed}},\;h\!\notin\!\mathcal{H}_{\mathrm{final}}\}\bigr|}
+                    {\bigl|\{h : h=y,\;h\!\in\!\mathcal{H}_{\mathrm{proposed}}\}\bigr|},
+\end{equation}
+where $y$ is the ground-truth answer, $\mathcal{H}_{\mathrm{proposed}}$ is
+the set of correct answers ever proposed, and $\mathcal{H}_{\mathrm{final}}$
+is the set of correct answers still held at the last round.
+A high PER indicates that the debate discards valuable reasoning before it
+can influence the final answer.
+
+%% ----------------------------------------------------------
+\subsection{Intervention Mechanisms}
+\label{sec:mechanisms}
+%% ----------------------------------------------------------
+
+We design three complementary mechanisms.
+Each is evaluated as a standalone condition; they share the same base
+debate protocol and differ only in the trigger logic and the additional
+prompt context given to flagged agents.
+
+\paragraph{Loser Resistance (Exp2a/2b).}
+Agents that lose peer support are prompted to re-examine their position
+from first principles rather than following the majority.
+A \emph{resistance scalar} $\rho_i^{(t)}\!\in\![0,\rho_{\max}]$ is
+maintained per agent; it increases by $\alpha\!=\!0.08$ per round that
+agent $i$ is in the minority, capped at $\rho_{\max}\!=\!0.65$.
+
+\textbf{Exp2a} (support-triggered): agent $i$ is flagged when its support
+share falls below 1.5 agents and the trend over the last two rounds is
+negative.
+\textbf{Exp2b} (metric-triggered): replaces the raw-support heuristic with
+live process diagnostics—influence asymmetry $\hat{I}>0.65$ or balance
+$B<0.30$—providing a principled, interpretable trigger.
+
+A flagged agent receives a prompt suffix instructing it to switch
+\emph{only if} a peer argument concretely defeats its reasoning; otherwise
+it should preserve its answer and explain why.
+
+\paragraph{Static Minority Protection (Exp3a).}
+After Round~1, any agent whose answer differs from the two-agent majority is
+flagged as a minority and given two protections: (i) an extra $+110$ token
+budget for its next response, and (ii) an instruction to first generate the
+strongest evidence for its hypothesis and then the strongest evidence against
+it before deciding whether to update.
+Exp3a uses a purely categorical trigger: one agent differs from the other two.
+
+\paragraph{Diagnostic-Triggered Minority Protection (Exp3b).}
+Exp3b replaces the categorical trigger with live process diagnostics.
+An agent is flagged when \emph{either}:
+\begin{itemize}[noitemsep,topsep=2pt]
+  \item influence asymmetry $\hat{I}\!\geq\!0.65$
+        \textbf{and} the agent's influence share $<\!0.34$, or
+  \item balance $B\!\leq\!0.30$ (rapid convergence detected),
+\end{itemize}
+where $\hat{I}$ and $B$ are computed from the trajectories accumulated so
+far following the formulas of \citeauthor{diagnostic2026}~(\citeyear{diagnostic2026}).
+Flagged agents receive the same $+110$ token budget and protect-before-change
+instruction as Exp3a.
+The diagnostic trigger is more selective than the categorical one: it
+activates only when the debate dynamics are actually imbalanced, not
+whenever any disagreement exists.
+
+%% ----------------------------------------------------------
+\subsection{Learned Predictor (Exp4)}
+\label{sec:predictor}
+%% ----------------------------------------------------------
+
+The hard thresholds in Exp2b and Exp3b were set by inspection.
+In Exp4 we replace them with a \emph{learned predictor} that estimates the
+probability that a minority hypothesis is correct given the current debate
+state.
+
+\paragraph{Training data.}
+We extract every minority situation from the 200 baseline debates (Exp1):
+for each question at each of rounds 2--4, and for each answer with strictly
+less than maximum support, we record the current feature vector and label
+$z=\mathbf{1}[h_{\mathrm{minority}}=y]$.
+This yields approximately 840 labeled minority situations with a positive
+rate of $\approx\!18\%$ (correct minorities are rare but important).
+
+\paragraph{Feature engineering.}
+We combine three signal groups:
+\begin{enumerate}[noitemsep,topsep=2pt]
+  \item \emph{Process diagnostics}: influence asymmetry $\hat{I}$, balance
+        $B$, engagement, responsiveness (computed live up to the current round).
+  \item \emph{Minority-specific}: support share $s_t(h)$, support delta
+        $\Delta s_t(h)$, mean LLM-judged explanation quality
+        $\bar{q}_{\mathrm{min}}$, mean confidence $\bar{c}_{\mathrm{min}}$,
+        number of defections from $h$, and whether $h$ was the majority in
+        the previous round.
+  \item \emph{Context}: rounds remaining ($T-t$), number of current supporters.
+\end{enumerate}
+
+\paragraph{Model.}
+We train a logistic regression with $\ell_2$ regularization selected via
+5-fold cross-validation, followed by isotonic-regression calibration on a
+held-out validation split~\cite{pedregosa2011scikit}.
+The top predictors are minority reasoning quality ($\beta=0.245$), support
+trajectory ($\beta=0.179$), and defection count ($\beta=-0.121$), validating
+that the LLM judge score is causally predictive of correctness.
+
+\paragraph{Adaptive token budget.}
+Instead of a fixed $+110$ tokens, Exp4 scales the extra budget by the
+predicted probability:
+\begin{equation}
+  \Delta_{\mathrm{tokens}}(i,t)
+    = \bigl\lfloor 150 \cdot \min\!\bigl(p_i^{(t)},\;0.9\bigr) \bigr\rfloor,
+\end{equation}
+where $p_i^{(t)} = P(h_i^{(t)}=y \mid \phi_i^{(t)})$ is the calibrated
+predictor output.
+An agent is protected only when $p_i^{(t)}\!\geq\!0.35$ and
+$\bar{q}_{\mathrm{min}}\!\geq\!0.30$, ensuring that quality-less dissent
+receives no extra resources.

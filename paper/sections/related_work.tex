@@ -1,0 +1,50 @@
+%% ============================================================
+%%  8.  RELATED WORK
+%% ============================================================
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Multi-agent LLM debate.}
+\citet{du2023improving} demonstrated that iterative debate among multiple
+LLM instances improves factual accuracy and reasoning quality over
+single-agent chains.
+\citet{liang2023encouraging} showed that divergent thinking emerges when
+agents are explicitly prompted to disagree.
+\citet{chan2023chateval} applied multi-agent debate to evaluation tasks.
+\citet{xiong2023examining} studied inter-agent consistency and convergence
+dynamics.
+\citet{chen2024reconcile} introduced round-table conferencing across diverse
+LLMs.
+A key limitation across this prior work is its focus on \emph{outcome}
+optimisation: whether the final answer is correct or preferred.
+Our closest predecessor, \citeauthor{diagnostic2026}~(\citeyear{diagnostic2026}),
+shifts to \emph{process} evaluation grounded in deliberative axioms, but
+stops at measurement.
+We extend this to adaptive control.
+
+\paragraph{Deliberative democracy and social choice.}
+Deliberative polling~\cite{fishkin2009deliberation} studies how structured
+small-group discussion changes individual opinions toward more informed
+positions—an analogue to our debate protocol.
+\citet{arrow1950difficulty} and \citet{sen1970collective} establish axiomatic
+foundations for collective decision-making that motivate our eight deliberative
+axioms (Table~\ref{tab:axioms}).
+\citet{irving2018ai} propose adversarial debate as a scalable AI safety
+mechanism, arguing that a human judge can identify the correct answer when
+two agents argue opposing sides.
+Our loser-resistance mechanism (Exp2a/2b) is inspired by this adversarial
+framing but conditions activation on process diagnostics to avoid the
+indiscriminate entrenchment that hurts PER in Exp2a.
+
+\paragraph{Adaptive intervention and selective reasoning.}
+\citet{lightman2023verify} demonstrate that process-level verification
+(step-by-step checking) outperforms outcome-level verification in
+mathematical reasoning.
+\citet{wang2023selfconsistency} show that sampling multiple reasoning paths
+and selecting by majority vote improves reliability—our baseline debate
+protocol is related but adds iterative interaction.
+\citet{klein2007performing} introduces the pre-mortem technique—imagining
+that a decision has failed and reasoning backward to identify causes—which
+directly motivates our devil's advocate design.
+To our knowledge, no prior work uses live process diagnostics as adaptive
+control signals within a running multi-agent debate.

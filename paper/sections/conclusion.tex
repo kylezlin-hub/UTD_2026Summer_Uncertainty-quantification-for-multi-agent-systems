@@ -1,0 +1,41 @@
+%% ============================================================
+%%  9.  CONCLUSION
+%% ============================================================
+\section{Conclusion}
+\label{sec:conclusion}
+
+We introduced Adaptive Influence Balancing (AIB), a framework that closes
+the observe–control loop in multi-agent LLM debates by converting live
+process diagnostics into adaptive intervention signals.
+Our central finding is that correct minority hypotheses are prematurely
+eliminated at an 8.2\% rate under a standard debate protocol, and that
+this rate can be reduced by 61\% through diagnostic-triggered minority
+protection, with a corresponding +5.5~pp gain in accuracy on MMLU-Pro.
+A learned predictor further replaces hand-tuned thresholds with a
+calibrated estimate of minority correctness, demonstrating that reasoning
+quality and support trajectory are the dominant predictors.
+
+Critically, not all interventions improve outcomes.
+Adversarial loser resistance without quality filtering increases PER, and
+categorical minority protection without diagnostic gating increases
+influence asymmetry.
+These failure modes reinforce the importance of
+\emph{selective}, \emph{quality-gated}, \emph{diagnostics-informed}
+intervention design.
+
+\paragraph{Limitations.}
+This study uses a single dataset (MMLU-Pro) and a single model family
+(Qwen2.5).
+The learned predictor is trained on 14B debates and evaluated on 7B
+debates, introducing a model-size confound for Exp4.
+No human preference evaluation has been conducted yet, though the study
+protocol is designed and ready (\S\ref{sec:experiments}).
+
+\paragraph{Future work.}
+Immediate extensions include (i) multi-dataset validation on GPQA
+(graduate-level scientific reasoning) and subjective policy debates,
+(ii) heterogeneous agent teams (different model sizes or families),
+(iii) the pre-registered human evaluation study (N=100 participants,
+Prolific), and (iv) reinforcement-learning policies that learn when to
+intervene from debate outcomes rather than from a separately trained
+classifier.
