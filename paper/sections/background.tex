@@ -1,0 +1,70 @@
+%% ============================================================
+%%  3.  BACKGROUND
+%% ============================================================
+\section{Background}
+\label{sec:background}
+
+\subsection{Deliberative Democracy Axioms}
+
+\citeauthor{diagnostic2026}~(\citeyear{diagnostic2026}) ground multi-agent
+debate evaluation in eight axioms drawn from deliberative democracy
+theory~\cite{fishkin2009deliberation,arrow1950difficulty,sen1970collective}:
+
+\begin{table}[h]
+\centering
+\caption{Deliberative axioms and their diagnostic metrics.
+This paper treats Non-domination and Pluralism as \emph{enforceable}
+constraints, not merely observable outcomes.}
+\label{tab:axioms}
+\small
+\begin{tabular}{lll}
+\toprule
+\textbf{Axiom} & \textbf{Meaning} & \textbf{Metric} \\
+\midrule
+Monotonicity        & Meaningful belief change over time      & Engagement \\
+Responsiveness      & Updates causally linked to peer arguments & Responsiveness \\
+Non-domination      & Influence distributed, not concentrated & Influence Asymmetry \\
+Pluralism           & Meaningful disagreement maintained      & Balance / PER \\
+Openness            & Engage with counterarguments            & Engagement / PER \\
+Cond.\ Convergence  & Consensus from reasoned interaction     & Consensus Reliability \\
+Stability           & Outcomes robust to unilateral deviation & Stability \\
+Agent Utility       & Decisions do not systematically harm    & Group Welfare \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Whereas \citeauthor{diagnostic2026} use these metrics for \emph{post-hoc}
+evaluation, our key normative move is to treat Non-domination and Pluralism
+as procedural inputs that can be actively \emph{enforced} through adaptive
+interventions.
+
+\subsection{Diagnostic Metrics}
+\label{sec:metrics}
+
+We inherit the six diagnostic metrics from \citeauthor{diagnostic2026} with
+their categorical adaptations for multiple-choice answers, and add two new
+outcome-level metrics.
+
+\paragraph{Process metrics (existing).}
+\emph{Engagement} (Eq.~4 in \citeauthor{diagnostic2026}) measures
+quality-weighted stance changes; low engagement signals dogmatism.
+\emph{Responsiveness} (Eqs.~5--6) measures quality-weighted movement toward
+peer consensus; low responsiveness signals parallel reasoning without
+genuine interaction.
+\emph{Influence Asymmetry} $\hat{I}$ (Eqs.~6--7) measures normalized
+entropy of peer-attribution weights; high $\hat{I}$ signals domination.
+\emph{Balance} $B$ (Eqs.~8--11) penalises both premature collapse and
+oscillation; low $B$ signals premature convergence.
+\emph{Stability} and \emph{Group Welfare} (Eqs.~14--16) measure Nash
+equilibrium fraction and average utility gain.
+
+\paragraph{New outcome metrics.}
+\emph{Consensus Reliability} (CR) conditions accuracy on consensus:
+$\text{CR}=P(\text{correct}\mid\text{consensus reached})$.
+Standard accuracy can be gamed by increasing the moderator fallback rate,
+which CR controls for.
+\emph{Premature Elimination Rate} (PER, defined in \S\ref{sec:formulation})
+directly measures the failure mode we target: correct hypotheses that are
+abandoned before the final round.
+PER is zero only if every correct hypothesis that was ever proposed survives
+to the last round.

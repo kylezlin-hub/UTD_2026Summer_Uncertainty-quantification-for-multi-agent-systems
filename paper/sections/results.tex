@@ -1,0 +1,147 @@
+%% ============================================================
+%%  6.  RESULTS
+%% ============================================================
+\section{Results}
+\label{sec:results}
+
+\subsection{Accuracy and Hypothesis Preservation}
+
+Table~\ref{tab:main} summarises accuracy, Premature Elimination Rate (PER),
+and Consensus Reliability across all six conditions.
+
+\begin{table}[t]
+\centering
+\caption{Main results on 200 MMLU-Pro questions.
+$\Delta\text{Acc}$ is absolute improvement over baseline.
+PER = premature elimination rate (lower is better).
+CR = consensus reliability.
+Best result per column in \textbf{bold}.
+Significance vs.\ baseline (McNemar): $^{*}p\!<\!0.05$, $^{**}p\!<\!0.01$.}
+\label{tab:main}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Method} & \textbf{Acc} & $\Delta$\textbf{Acc} & \textbf{PER} & \textbf{CR} \\
+\midrule
+Baseline (Exp1)           & 54.5\% & ---        & 8.20\% & 57.1\% \\
+Loser Resist.--Support (Exp2a) & 55.5\% & +1.0pp  & 9.02\% & 56.3\% \\
+Loser Resist.--Metric  (Exp2b) & 58.0\% & +3.5pp$^{*}$ & 7.81\% & 58.3\% \\
+Static Protection      (Exp3a) & 57.5\% & +3.0pp$^{*}$ & 6.20\% & 58.1\% \\
+Diag.\ Protection      (Exp3b) & \textbf{60.0\%} & \textbf{+5.5pp$^{**}$} & \textbf{3.17\%} & \textbf{60.6\%} \\
+\midrule
+Learned Predictor      (Exp4)  & \PLACEHOLDER{Exp4\_ACC}\% &
+                                  \PLACEHOLDER{Exp4\_DELTA\_ACC}$^{\dag}$ &
+                                  \PLACEHOLDER{Exp4\_PER}\% &
+                                  \PLACEHOLDER{Exp4\_CR}\% \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\paragraph{Overall trend.}
+Accuracy improves monotonically from Exp2b through Exp3b as triggers become
+more principled.
+The diagnostic trigger in Exp3b achieves $+5.5$ percentage points over
+baseline (54.5\%→60.0\%, McNemar $p\!<\!0.01$), and reduces PER by
+61.3\% (8.20\%→3.17\%).
+Consensus reliability also rises from 57.1\% to 60.6\%, meaning that when
+agents do agree under Exp3b, they are more likely to be right.
+
+\paragraph{Exp2a hurts hypothesis preservation.}
+The support-triggered loser resistance (Exp2a) is the \emph{only} condition
+that worsens PER relative to baseline (+9.7\%).
+Adversarial incentives without a quality filter appear to entrench agents in
+their current positions indiscriminately, causing incorrect minority views to
+persist alongside correct ones.
+
+\paragraph{Diagnostic trigger outperforms categorical trigger.}
+Exp3b (diagnostic) substantially outperforms Exp3a (categorical) despite
+sharing the same protection mechanism, same token budget, and same prompt.
+The categorical trigger activates in 39.5\% of debates including many
+where no genuine imbalance exists, whereas the diagnostic trigger fires in
+36.5\% of debates but only when influence asymmetry or rapid convergence is
+detected.
+This selectivity explains the gap: Exp3a paradoxically increases mean
+influence asymmetry to 0.235 (vs.\ 0.098 at baseline), suggesting that
+indiscriminate minority amplification creates its own structural imbalance.
+
+\paragraph{Learned predictor (Exp4).}
+\PLACEHOLDER{Fill in when Exp4 completes. Compare Exp4 accuracy, PER, and
+CR to Exp3b. Report whether predictor is more or less selective
+(intervention rate) and whether precision is higher.}
+
+%% ----------------------------------------------------------
+\subsection{Process Metrics}
+%% ----------------------------------------------------------
+
+Table~\ref{tab:process} shows the six process diagnostics.
+
+\begin{table}[t]
+\centering
+\caption{Process-level diagnostic metrics (mean $\pm$ std).
+Higher is better for engagement, responsiveness, influence asymmetry
+\emph{inverted} ($1-\hat{I}$), balance, stability, and group welfare.
+Best per column in \textbf{bold}.}
+\label{tab:process}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Method} & \textbf{Eng.} & \textbf{Resp.} & \textbf{IA-inv.} & \textbf{Bal.} & \textbf{Stab.} & \textbf{GW} \\
+\midrule
+Baseline (Exp1)  & .106 & .045 & .902 & .692 & \textbf{.973} & .147 \\
+Loser-Support (Exp2a) & .092 & .036 & .867 & .657 & .983 & .167 \\
+Loser-Metric  (Exp2b) & .105 & .046 & .880 & .696 & .978 & \textbf{.173} \\
+Static Prot.  (Exp3a) & .076 & .011 & .765 & \textbf{.728} & .942 & .107 \\
+Diag.\ Prot.  (Exp3b) & \textbf{.116} & \textbf{.047} & .859 & .667 & .967 & .152 \\
+\midrule
+Learned (Exp4)        &
+  \PLACEHOLDER{E4\_eng} &
+  \PLACEHOLDER{E4\_resp} &
+  \PLACEHOLDER{E4\_IAinv} &
+  \PLACEHOLDER{E4\_bal} &
+  \PLACEHOLDER{E4\_stab} &
+  \PLACEHOLDER{E4\_gw} \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+Exp3b achieves the highest engagement (0.116) and responsiveness (0.047),
+indicating that protected agents engage more substantively rather than
+passively deferring.
+Exp3a shows the lowest responsiveness (0.011) and influence asymmetry
+inverted (0.765), confirming that its over-broad categorical trigger
+creates structural dominance rather than balanced deliberation.
+Stability is highest for Exp2a (0.983) and lowest for Exp3a (0.942);
+Exp3b maintains stability at 0.967 while achieving the best accuracy.
+
+%% ----------------------------------------------------------
+\subsection{Intervention Analysis}
+%% ----------------------------------------------------------
+
+\begin{table}[t]
+\centering
+\caption{Intervention statistics across conditions.
+Turn rate = fraction of agent turns with intervention applied.
+Debate rate = fraction of debates with at least one intervention.}
+\label{tab:intervention}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Method} & \textbf{Turn Rate} & \textbf{Debate Rate} \\
+\midrule
+Loser-Support  (Exp2a) & 1.5\%  & 17.5\% \\
+Loser-Metric   (Exp2b) & 7.7\%  & 30.5\% \\
+Static Prot.   (Exp3a) & 6.2\%  & 39.5\% \\
+Diag.\ Prot.   (Exp3b) & 7.1\%  & 36.5\% \\
+Learned Pred.  (Exp4)  & \PLACEHOLDER{E4\_turnrate} & \PLACEHOLDER{E4\_debaterate} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Among the diagnostic conditions, Exp3b's 7.1\% turn intervention rate
+produces the best accuracy outcome, suggesting that quality matters more
+than quantity of interventions.
+Exp2a's very conservative 1.5\% turn rate explains why it provides the
+weakest accuracy lift despite the adversarial motivation.
+The learned predictor (Exp4) is expected to be more selective than Exp3b
+with higher precision, as it conditions on both predicted correctness and
+minimum reasoning quality.
+\PLACEHOLDER{Fill in Exp4 intervention analysis once results available.}

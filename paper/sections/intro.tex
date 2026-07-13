@@ -1,0 +1,78 @@
+%% ============================================================
+%%  1.  INTRODUCTION
+%% ============================================================
+\section{Introduction}
+\label{sec:intro}
+
+Multi-agent LLM debate has emerged as a promising approach to collective
+reasoning, in which several language model instances discuss a question and
+aim to converge on a correct answer~\cite{du2023improving,liang2023encouraging,
+chan2023chateval}.
+The underlying hope is that disagreement drives critical examination:
+agents challenge each other's reasoning, surface overlooked evidence, and
+produce more robust conclusions than any individual agent could.
+
+\paragraph{The majority bias problem.}
+In practice, however, convergence often reflects social pressure rather than
+epistemic progress.
+When a majority of agents align on one answer, minority agents frequently
+abandon correct hypotheses not because they have been logically defeated,
+but because peer pressure outweighs the strength of their own reasoning.
+We call this failure mode \emph{premature elimination}: a correct hypothesis
+is present in the debate and then discarded before receiving adequate
+evaluation.
+Across 200 MMLU-Pro questions under a standard debate protocol, we find that
+8.2\% of proposed correct hypotheses are discarded before the final round—
+a non-trivial loss rate that directly reduces accuracy.
+
+\paragraph{The observation–control gap.}
+Recent work has developed principled process-level diagnostics for detecting
+such failures~\cite{diagnostic2026}.
+Metrics such as influence asymmetry, balance, and engagement can identify
+when a debate is dominated by one agent, converging too rapidly, or
+exhibiting dogmatic non-engagement.
+However, this prior work \emph{observes} pathological dynamics after the
+fact; it does not \emph{correct} them.
+Closing this observe–control loop is the central contribution of this paper.
+
+\paragraph{Adaptive Influence Balancing.}
+We propose \textbf{Adaptive Influence Balancing} (AIB), a framework that
+monitors live process diagnostics and selectively intervenes to preserve
+minority agents whose reasoning shows evidence of correctness.
+AIB instantiates three complementary mechanisms—loser resistance, static
+minority protection, and diagnostic-triggered minority protection—and
+evaluates them alongside a learned predictor that replaces hand-tuned
+thresholds with a calibrated estimate of minority correctness.
+
+\paragraph{Key results.}
+Across 200 MMLU-Pro questions with Qwen2.5-14B-Instruct (3 agents, 5 rounds):
+\begin{itemize}[noitemsep,topsep=2pt]
+  \item \textbf{Diagnostic-triggered minority protection} (Exp3b) achieves
+        60.0\% accuracy vs.\ 54.5\% baseline (+5.5~pp, $p\!<\!0.01$),
+        reduces PER from 8.2\% to 3.2\% (−61.3\%), and improves consensus
+        reliability to 60.6\%.
+  \item \textbf{Learned predictor} (Exp4) replaces fixed thresholds with a
+        logistic predictor trained on process diagnostics and reasoning
+        quality; top features are minority reasoning quality ($\beta=0.245$)
+        and support trajectory ($\beta=0.179$).
+  \item \textbf{Not all interventions help}: adversarial loser resistance
+        (Exp2a) \emph{worsens} PER by 9.7\%, and categorical minority
+        protection (Exp3a) paradoxically increases influence asymmetry.
+        Quality-gated, diagnostics-informed triggers are essential.
+\end{itemize}
+
+\paragraph{Contributions.}
+\begin{enumerate}[noitemsep,topsep=2pt]
+  \item The \textbf{AIB framework}: three intervention mechanisms for
+        protecting minority hypotheses, ranging from support-triggered
+        heuristics to process-diagnostic control signals.
+  \item \textbf{Premature Elimination Rate (PER)}: a new metric that
+        directly measures the failure mode targeted by AIB and provides a
+        more diagnostic signal than accuracy alone.
+  \item \textbf{Empirical evidence}: +5.5~pp accuracy and −61\% PER on
+        MMLU-Pro, with evidence that trigger selectivity determines whether
+        interventions help or hurt.
+  \item \textbf{Learned predictor}: replaces hard thresholds with a
+        calibrated model showing that reasoning quality and support
+        dynamics are the dominant predictors of minority correctness.
+\end{enumerate}

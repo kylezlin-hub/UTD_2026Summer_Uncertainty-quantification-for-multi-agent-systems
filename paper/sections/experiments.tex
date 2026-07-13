@@ -1,0 +1,72 @@
+%% ============================================================
+%%  5.  EXPERIMENTAL SETUP
+%% ============================================================
+\section{Experimental Setup}
+\label{sec:experiments}
+
+\paragraph{Dataset.}
+We use the \textbf{MMLU-Pro} benchmark~\cite{mmlupro}, a challenging
+multiple-choice reasoning dataset spanning 14 academic domains (biology,
+chemistry, law, mathematics, etc.) with up to 10 answer options per
+question.
+We sample 200 questions from the test split at a fixed seed (seed=7)
+and run each experimental condition on the same 200 questions, enabling
+paired statistical comparison.
+All questions are in categorical (multiple-choice) mode; no ordinal stance
+scores are used.
+
+\paragraph{Model.}
+Experiments 1--3b use \textbf{Qwen2.5-14B-Instruct}~\cite{qwen25} via the
+HuggingFace \texttt{transformers} backend on a cluster GPU.
+Experiment~4 uses \textbf{Qwen2.5-7B-Instruct} via Ollama for local
+reproducibility on consumer hardware (NVIDIA RTX A2000 8\,GB).
+All agents use temperature $0.7$, top-$p$ $0.9$, and a maximum of 220
+new tokens per turn (extended for protected agents; see \S\ref{sec:predictor}).
+
+\paragraph{Debate protocol.}
+Each question is debated by $N\!=\!3$ agents over $T\!=\!5$ rounds.
+Round~1 agents answer independently.
+Rounds 2--5 agents see all previous answers and explanations before
+responding.
+If all agents agree by round $T$ the consensus answer is accepted; otherwise
+a moderator selects the majority answer.
+Agent presentation order is shuffled per question.
+Parse failures trigger up to two re-prompts; debates with unresolved parse
+failures are discarded.
+
+\paragraph{LLM-as-judge.}
+After all debates complete, the same Qwen model evaluates each agent
+explanation along four dimensions (explanation quality, use of prior-round
+reasoning, justification of stance, independence of reasoning), each scored
+in $[0,1]$.
+The overall score $q_i^{(t)}$ used in feature engineering and process
+metrics is the \texttt{explanation\_good} dimension.
+
+\paragraph{Evaluation metrics.}
+We report:
+\textbf{Accuracy} (fraction of correct final answers),
+\textbf{PER} (Eq.~2),
+\textbf{Consensus Reliability} ($P(\text{correct}\mid\text{consensus})$),
+and the six process-level diagnostics from \citeauthor{diagnostic2026}:
+engagement, responsiveness, influence asymmetry, balance, stability, and
+group welfare (all computed with categorical adaptations).
+
+\paragraph{Conditions.}
+\begin{itemize}[noitemsep,topsep=2pt]
+  \item \textbf{Baseline} (Exp1): standard debate, no intervention.
+  \item \textbf{Loser Resistance--Support} (Exp2a): support-trend trigger.
+  \item \textbf{Loser Resistance--Metric} (Exp2b): diagnostic trigger.
+  \item \textbf{Static Minority Protection} (Exp3a): categorical trigger.
+  \item \textbf{Diagnostic Protection} (Exp3b): diagnostic trigger (\S\ref{sec:mechanisms}).
+  \item \textbf{Learned Predictor} (Exp4): calibrated logistic predictor (\S\ref{sec:predictor}).
+\end{itemize}
+Exp3b and Exp4 share identical prompt instructions for flagged agents; the
+only difference is how the flag is set.
+This isolates the contribution of the learned predictor over the hand-tuned
+thresholds.
+
+\paragraph{Statistical tests.}
+We use McNemar's test for paired accuracy comparisons (same 200 questions)
+and Wilcoxon signed-rank tests for process metrics.
+Significance levels: $^{*}p\!<\!0.05$, $^{**}p\!<\!0.01$,
+$^{***}p\!<\!0.001$.

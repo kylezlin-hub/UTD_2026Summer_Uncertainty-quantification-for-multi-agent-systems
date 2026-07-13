@@ -1,0 +1,23 @@
+Multi-agent LLM debates suffer from majority bias: correct minority
+hypotheses are eliminated prematurely before adequate evaluation, reducing
+accuracy and collective reliability.
+We propose \textbf{Adaptive Influence Balancing} (AIB), a framework that
+monitors live process diagnostics and selectively intervenes to preserve
+minority agents with high-quality reasoning.
+We introduce the \emph{Premature Elimination Rate} (PER)—the fraction of
+proposed correct hypotheses discarded before the final round—as a direct
+measure of this failure mode.
+Evaluating five conditions on 200 MMLU-Pro questions with Qwen2.5
+(3~agents, 5~rounds), we find that diagnostic-triggered minority protection
+achieves 60.0\% accuracy vs.\ 54.5\% baseline (+5.5~pp, $p\!<\!0.01$),
+reduces PER by 61.3\% (8.2\%→3.2\%), and improves consensus reliability
+to 60.6\%.
+A learned predictor (Exp4) replaces hard thresholds with a calibrated
+logistic model trained on process diagnostics and LLM-judged reasoning
+quality; top predictors of minority correctness are explanation quality
+($\beta\!=\!0.245$) and support trajectory ($\beta\!=\!0.179$).
+Notably, adversarial loser resistance \emph{worsens} PER (+9.7\%) and
+categorical minority protection paradoxically increases influence asymmetry,
+demonstrating that trigger selectivity is the critical design choice.
+Our results show that process-diagnostic control signals enable principled,
+effective intervention in collective LLM reasoning.

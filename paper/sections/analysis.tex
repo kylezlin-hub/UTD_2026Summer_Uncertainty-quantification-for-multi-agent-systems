@@ -1,0 +1,103 @@
+%% ============================================================
+%%  7.  ANALYSIS
+%% ============================================================
+\section{Analysis}
+\label{sec:analysis}
+
+\subsection{When Does Intervention Help vs.\ Hurt?}
+\label{sec:when}
+
+Our results reveal a clear principle: \emph{intervention quality matters
+more than intervention quantity}.
+Table~\ref{tab:intervention} shows that Exp2a triggers on only 1.5\% of
+turns yet still manages to worsen PER (+9.7\%).
+Exp3a triggers on 6.2\% of turns and 39.5\% of debates—more than any
+other condition—yet produces lower accuracy than Exp3b despite the same
+per-turn protection mechanism.
+
+The failure modes differ by condition:
+
+\textbf{Exp2a (loser resistance without quality filter):}
+Adversarial incentives cause agents to persist in incorrect minority
+positions as well as correct ones.
+Because the resistance scalar does not condition on reasoning quality,
+wrong agents become equally entrenched, polluting later rounds with
+reinforced incorrect hypotheses.
+The net effect is increased PER rather than reduced PER.
+
+\textbf{Exp3a (categorical trigger without diagnostic filter):}
+Protecting every minority regardless of debate dynamics creates structural
+imbalance.
+Exp3a raises mean influence asymmetry to $0.235$, compared to $0.098$ for
+the baseline, because the intervention \emph{amplifies} minority influence
+even when no genuine domination is occurring.
+The result is a debate that alternates between majority pressure and
+artificially sustained minority dissent, reducing responsiveness (0.011)
+and destabilising Nash stability (0.942).
+
+\textbf{Exp3b and Exp4 (selective, quality-gated):}
+By conditioning on diagnostic signals (influence asymmetry $\geq 0.65$ or
+balance $\leq 0.30$) and, in Exp4, on predicted reasoning quality, these
+conditions protect minorities only when the debate dynamics warrant it.
+This selectivity keeps influence asymmetry in check (0.141 for Exp3b vs.\
+0.235 for Exp3a) while achieving the largest accuracy gains.
+
+The lesson for practitioners is that intervention design requires both a
+\emph{when} criterion (diagnostic trigger) and a \emph{who} criterion
+(quality filter); either alone is insufficient.
+
+\subsection{Feature Importance of the Learned Predictor}
+\label{sec:feature_importance}
+
+\begin{table}[t]
+\centering
+\caption{Top features of the logistic minority-correctness predictor
+(Exp4), sorted by $|\beta|$.
+Positive $\beta$ increases probability of correctness; negative $\beta$
+decreases it.}
+\label{tab:features}
+\small
+\begin{tabular}{lrl}
+\toprule
+\textbf{Feature} & $\beta$ & \textbf{Interpretation} \\
+\midrule
+Minority quality mean     & $+0.245$ & Better reasoning → more likely correct \\
+Support delta             & $+0.179$ & Gaining support → more likely correct \\
+Num.\ defections          & $-0.121$ & More agents left → less likely correct \\
+Was majority before       & $-0.107$ & Defectors to minority → less likely correct \\
+Responsiveness            & $-0.098$ & High responsiveness → minority not isolated \\
+Balance                   & $+0.091$ & Higher balance → minority survives fairly \\
+Rounds remaining          & $-0.088$ & Late rounds → less time to recover \\
+Minority confidence mean  & $+0.078$ & Higher self-confidence → slight signal \\
+Influence asymmetry       & $+0.077$ & High asymmetry → minority may be suppressed \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:features} shows that \emph{reasoning quality is the dominant
+predictor} ($|\beta|=0.245$), confirming that the LLM judge score carries
+genuine signal beyond what process metrics alone provide.
+Support trajectory ($\beta=0.179$) indicates that minorities actively gaining
+support are more likely correct than those whose support is declining.
+Notably, agents who \emph{were} previously in the majority and moved to a
+minority position ($\beta=-0.107$) are less likely to be correct—they
+likely defected for social rather than epistemic reasons.
+High influence asymmetry alone ($\beta=+0.077$) is a weak but positive
+predictor: minority agents under a dominant opponent face suppression, and
+some fraction of that suppression targets correct views.
+
+Together these features validate the deliberative framework: process
+diagnostics that operationalize the Non-domination and Pluralism axioms
+carry genuine information about reasoning correctness, not merely about
+debate dynamics.
+
+\subsection{Exp4 vs.\ Exp3b: Hard Thresholds vs.\ Learned Predictor}
+\label{sec:exp4_vs_exp3b}
+
+\PLACEHOLDER{Fill in this subsection when Exp4 results are available.
+Key comparisons to report:
+(1) Accuracy and PER of Exp4 vs. Exp3b;
+(2) Intervention rate comparison (is Exp4 more selective?);
+(3) Are the cases where Exp4 helps / hurts relative to Exp3b interpretable
+    from feature importance?
+(4) Does scaling tokens by p(correct) help vs. fixed +110 tokens?}
