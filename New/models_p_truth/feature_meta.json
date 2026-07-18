@@ -1,0 +1,23 @@
+{
+  "feature_names": [
+    "quality_x_support_delta",
+    "support_loss_rate",
+    "support_delta",
+    "judge_explanation_good",
+    "defector_ratio",
+    "num_defectors",
+    "all_judge_scores",
+    "was_majority_x_delta",
+    "confidence_x_quality",
+    "independent_reasoning_x_quality",
+    "quality_x_defectors",
+    "left_majority",
+    "isolating",
+    "quality_x_rounds",
+    "prefix_attributed_influence"
+  ],
+  "best_auc_cv": 0.6047457627118644,
+  "n_train": 259,
+  "n_positive": 59,
+  "positive_rate": 0.2277992277992278
+}
