@@ -1,5 +1,4 @@
-# Summer reaseach update 06/18/2026
-I presented my research idea to Prof. Chen during today's meeting. He liked the idea and said it was novel. 
+
 My Research Question:
 Can adaptive influence balancing improve debate quality?
 Can minority viewpoints be preserved long enough to improve final decisions?
