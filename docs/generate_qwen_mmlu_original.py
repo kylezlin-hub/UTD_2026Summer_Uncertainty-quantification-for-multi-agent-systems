@@ -8,15 +8,19 @@ paper uses ORIGINAL MMLU (Hendrycks et al. 2020): 4 options (A-D), and randomly
 samples 100 questions ACROSS ALL SUBJECTS ("Question sets ... held fixed across
 seeds", paper A.2).
 
-This script runs the SAME pipeline / model / seeds / rounds / judge / metrics as
-your baseline, changing ONLY the question set: original 4-choice MMLU, broad
-subject sampling. It isolates "benchmark & difficulty" from "model scale".
+This script uses original 4-choice MMLU (broad subject sampling) with a
+COOPERATIVE deliberation setting:
+  - each agent gets a DISTINCT role-based persona (expert / lead decision-maker /
+    practitioner), adapted to the question's domain (e.g. a business question ->
+    a CEO / subject expert / department-head style team);
+  - each agent samples at a DISTINCT temperature (default 0.4 / 0.7 / 1.0);
+  - agents update only if a peer's argument is stronger -- there is NO adversarial
+    "must disagree" dynamic (that lives in generate_qwen_mmlu_faithful.py).
 
-    MMLU-Pro business (yours)   ->  hard, 10-choice, single domain, chance=10%
-    MMLU broad (paper / this)   ->  easier, 4-choice, all subjects,  chance=25%
-
-If the process->accuracy correlation reappears here at 14B, the null was driven
-by the BENCHMARK, not model scale. If it stays null, model scale is implicated.
+    MMLU-Pro business (baseline) ->  hard, 10-choice, single domain, chance=10%
+    MMLU broad (this)            ->  easier, 4-choice, all subjects,  chance=25%
+    Personas    : Agent1=expert, Agent2=lead/decision-maker, Agent3=practitioner
+    Temperatures: per-agent, configurable via --agent-temps
 
 The question set is sampled ONCE with a fixed --sample-seed and held IDENTICAL
 across debate seeds (matching the paper), so per-question aggregation across
@@ -38,6 +42,17 @@ import sys
 from pathlib import Path
 
 import qwen_methodology_code as qmc
+
+# Corporate networks with SSL inspection break HuggingFace downloads with
+# CERTIFICATE_VERIFY_FAILED. truststore routes Python's SSL through the OS trust
+# store (which already trusts the corporate CA). No-op if truststore isn't
+# installed -- install it with `pip install truststore` if HF loads fail on SSL.
+try:
+    import truststore as _truststore
+
+    _truststore.inject_into_ssl()
+except ImportError:
+    pass
 
 # Sample the question set once, identically across debate seeds (paper protocol).
 # Overridable via --sample-seed; kept separate from the debate RNG seed.
@@ -120,6 +135,121 @@ def install_original_mmlu(sample_seed: int, subjects: list[str] | None) -> None:
           f"sample_seed={sample_seed}.", flush=True)
 
 
+# --- Cooperative role-based personas + per-agent sampling temperature ---------
+# A collaborative decision-team framing (distinct roles, shared goal of finding
+# the correct answer). Domain is taken from the MMLU subject so roles adapt
+# (business -> CEO/expert/dept-head style). COOPERATIVE: update only if a peer's
+# argument is stronger; no forced disagreement.
+_ORIG_INITIAL = qmc.qwen_initial_messages
+_ORIG_UPDATE = qmc.qwen_update_messages
+
+# Per-agent sampling temperature (expert precise -> practitioner exploratory).
+AGENT_TEMPS: dict[str, float] = {"Agent1": 0.4, "Agent2": 0.7, "Agent3": 1.0}
+
+
+def _domain(question) -> str:
+    """Human-readable domain from the MMLU subject (category)."""
+    d = (getattr(question, "category", "") or "").replace("_", " ").strip()
+    return d or "this subject"
+
+
+def _persona(agent: str, question) -> str:
+    """Distinct cooperative role persona for one agent, adapted to the domain."""
+    dom = _domain(question)
+    roles = {
+        "Agent1": f"You are a senior subject-matter EXPERT in {dom}, reasoning from deep "
+                  f"technical knowledge and first principles.",
+        "Agent2": f"You are the LEAD DECISION-MAKER (like a director/CEO) responsible for the "
+                  f"final call on this {dom} question; you weigh the team's arguments and choose "
+                  f"the most defensible answer.",
+        "Agent3": f"You are an experienced PRACTITIONER / department head in {dom}; you check that "
+                  f"the reasoning is applied correctly and catch practical mistakes.",
+    }
+    base = roles.get(agent, f"You are an expert in {dom}.")
+    return (base + " You are collaborating with the other team members to find the correct answer "
+            "together; consider their reasoning and update your answer only if their argument is "
+            "stronger.")
+
+
+def coop_initial_messages(question, agent):
+    """Round-1 independent answer under a distinct cooperative role persona."""
+    if question.dataset_type != "objective":
+        return _ORIG_INITIAL(question, agent)
+    answer_slot = "/".join(question.answer_labels)
+    user = (f"{question.question}\n\n"
+            "Give your initial answer independently. Use exactly this format:\n"
+            f"Answer: <{answer_slot}>\n"
+            "Confidence: <number from 0 to 1>\n"
+            "Explanation: <brief justification>")
+    return [{"role": "system", "content": _persona(agent, question)},
+            {"role": "user", "content": user}]
+
+
+def coop_update_messages(question, agent, previous_round):
+    """Later-round cooperative update (distinct role persona; update if warranted)."""
+    if question.dataset_type != "objective":
+        return _ORIG_UPDATE(question, agent, previous_round)
+    answer_slot = "<" + "/".join(question.answer_labels) + ">"
+    other_lines = []
+    for other, turn in previous_round.items():
+        if other == agent:
+            continue
+        other_lines.append(f"{other}: Answer={turn['answer']}; Explanation={turn['response']}")
+    own = previous_round[agent]
+    user = (f"Question:\n{question.question}\n\n"
+            f"Your previous answer was {own['answer']} with explanation: {own['response']}\n\n"
+            "Other team members' previous-round messages:\n" + "\n".join(other_lines) +
+            "\n\nConsider their reasoning and update your answer only if their argument is stronger. "
+            "Use exactly this format:\n"
+            f"Answer: {answer_slot}\n"
+            "Confidence: <number from 0 to 1>\n"
+            "Explanation: <brief justification grounded in the debate>")
+    return [{"role": "system", "content": _persona(agent, question)},
+            {"role": "user", "content": user}]
+
+
+def per_agent_temp_turns(llm, messages_by_agent, question, seeds_by_agent, max_attempts=3):
+    """Drop-in for complete_qwen_turns_with_retry that samples each agent at its own
+    temperature (AGENT_TEMPS). Runs agents sequentially, since a single batched call
+    cannot mix per-agent temperatures."""
+    turns: dict[str, dict[str, object]] = {}
+    attempts = max(1, max_attempts)
+    for agent, msgs in messages_by_agent.items():
+        temp = AGENT_TEMPS.get(agent)
+        seed = seeds_by_agent[agent]
+        first_error = ""
+        for attempt in range(attempts):
+            am = msgs if attempt == 0 else qmc.qwen_reprompt_messages(msgs, question)
+            raw = llm.complete(am, seed=seed + attempt, temperature=temp)
+            parsed = qmc.parse_qwen_turn(raw, question.dataset_type, question.answer_labels, strict=True)
+            if attempt == 0 and parsed["parse_failed"]:
+                first_error = str(parsed["parse_error"])
+            parsed["re_prompted"] = attempt > 0
+            if first_error:
+                parsed["first_parse_error"] = first_error
+            if not parsed["parse_failed"] or attempt == attempts - 1:
+                turns[agent] = parsed
+                break
+    return turns
+
+
+def install_cooperative_personas() -> None:
+    """Install distinct cooperative role personas (expert / lead / practitioner)."""
+    qmc.qwen_initial_messages = coop_initial_messages
+    qmc.qwen_update_messages = coop_update_messages
+    print("[cooperative] Distinct role personas installed "
+          "(Agent1=expert, Agent2=lead, Agent3=practitioner); cooperative update rule.",
+          flush=True)
+
+
+def install_per_agent_temperature(temps: dict[str, float]) -> None:
+    """Route generation through a per-agent-temperature turn function."""
+    global AGENT_TEMPS
+    AGENT_TEMPS = temps
+    qmc.complete_qwen_turns_with_retry = per_agent_temp_turns
+    print(f"[per-agent-temp] Per-agent sampling temperatures: {temps}", flush=True)
+
+
 def parse_args() -> argparse.Namespace:
     """Parse command-line options for the original-MMLU generator."""
     p = argparse.ArgumentParser(
@@ -136,7 +266,10 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--model-id", default="Qwen/Qwen2.5-14B-Instruct",
                    help="MUST match your baseline_v2 model for a fair comparison.")
     p.add_argument("--split", default="test")
-    p.add_argument("--temperature", type=float, default=0.7)
+    p.add_argument("--agent-temps", default="0.4,0.7,1.0",
+                   help="Comma-separated sampling temperatures for Agent1,Agent2,Agent3.")
+    p.add_argument("--temperature", type=float, default=0.7,
+                   help="Fallback temperature (used by the judge and any unmapped agent).")
     p.add_argument("--top-p", type=float, default=0.9)
     p.add_argument("--max-new-tokens", type=int, default=220)
     p.add_argument("--judge-max-new-tokens", type=int, default=220)
@@ -184,6 +317,11 @@ def main() -> None:
     args = parse_args()
     seeds = args.seed if args.seed is not None else [7, 17, 42]
     install_original_mmlu(args.sample_seed, args.subject)
+    # Cooperative distinct role personas + per-agent sampling temperature.
+    temps_list = [float(x) for x in str(args.agent_temps).split(",") if x.strip()]
+    temps = {f"Agent{i + 1}": t for i, t in enumerate(temps_list)}
+    install_cooperative_personas()
+    install_per_agent_temperature(temps)
     for seed in seeds:
         run_one_seed(args, seed)
     print("[original-mmlu] Done. Compare against baseline with "
