@@ -1605,7 +1605,11 @@ def parse_qwen_judgment(raw: str) -> dict[str, object]:
         "justifies_current_stance",
         "independent_reasoning",
     ]:
-        defaults[key] = float(np.clip(float(defaults.get(key, 0.5)), 0.0, 1.0))
+        try:
+            defaults[key] = float(np.clip(float(defaults.get(key, 0.5)), 0.0, 1.0))
+        except (TypeError, ValueError):
+            # Judge sometimes emits non-numeric scores (e.g. "N/A"); treat as neutral.
+            defaults[key] = 0.5
     return defaults
 
 
