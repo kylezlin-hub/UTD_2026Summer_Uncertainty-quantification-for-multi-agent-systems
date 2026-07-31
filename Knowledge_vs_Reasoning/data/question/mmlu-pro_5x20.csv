@@ -1,0 +1,1013 @@
+question_no,question,correct_answer,category,labels
+3261,"Suppose you discovered a new species of bioluminescent worm . How could you prove that it was the worm itself and not some contaminating bacteria that was producing the light ?
+A. Place the worm in a dark environment
+B. Measure the light intensity emitted by the worm over time
+C. Feed the worm with different food sources
+D. Place the light-producing substance in complete growth media or physically examine it under a microscope
+E. Perform a chemical analysis of the light-producing substance
+F. Expose the worm to high temperatures",D,biology,A|B|C|D|E|F
+3484,"Distinguish between covalent and ionic bonds.
+A. A covalent bond is the attraction between two atoms sharing multiple protons, whereas an ionic bond is the attraction between two neutrally charged atoms.
+B. A covalent bond is a bond in which two atoms are held together by a shared pair of electrons. An ionic bond is a bond in which oppositely charged ions are held together by electrical attraction.
+C. A covalent bond is created when one atom donates both electrons in a pair, and an ionic bond occurs when two positively charged ions attract each other.
+D. A covalent bond is a bond formed when two atoms share a neutron. An ionic bond is a bond formed when two ions of different charges form a magnetic attraction.
+E. A covalent bond involves the transfer of electrons from one atom to another, while an ionic bond involves sharing a pair of neutrons between two atoms.
+F. A covalent bond is a bond where two atoms share a pair of protons. An ionic bond is a bond where two ions of the same charge are held together by their magnetic field.
+G. A covalent bond is formed when two atoms share a pair of electrons. An ionic bond is formed when two atoms of the same charge are held together by electrical repulsion.
+H. A covalent bond is formed by the attraction between ions of the same charge, and an ionic bond is formed when atoms share pairs of protons.
+I. A covalent bond is a bond where two atoms share a pair of electrons unevenly, and an ionic bond is a bond where two atoms of opposite charges share a neutron.
+J. A covalent bond occurs when two atoms share a pair of electrons with identical charges, while an ionic bond is the result of two atoms with similar electronegativities transferring electrons.",B,biology,A|B|C|D|E|F|G|H|I|J
+3207,"Which of the following statements correctly describes what happens to the preRNA during RNA processing?
+A. Point mutations are repaired, introns are removed, and both a 5′ cap and a poly-A tail are added after the preRNA leaves the nucleus.
+B. Point mutations are repaired, exons are removed, and both a 5′ cap and a poly-A tail are added before the preRNA leaves the nucleus.
+C. Exons are removed in the nucleus. A 5′ cap and the poly-A tail are added after the preRNA leaves the nucleus.
+D. Exons are removed and a 5′ cap is added before the preRNA leaves the nucleus. After leaving the nucleus, the poly-A tail is added.
+E. Introns are removed and a poly-A tail is added before the preRNA leaves the nucleus. After leaving the nucleus, the 5′ cap is added.
+F. Introns are removed in the nucleus. A 5′ cap and the poly-A tail are added after the preRNA leaves the nucleus.
+G. Introns are removed and both a 5′ cap and a poly-A tail are added before the preRNA leaves the nucleus.
+H. Both a 5′ cap and a poly-A tail are added before the preRNA leaves the nucleus. After leaving the nucleus, introns are removed.
+I. Introns are removed, exons are added, and both a 5′ cap and a poly-A tail are added before the preRNA leaves the nucleus.
+J. Introns are removed and a 5′ cap is added before the preRNA leaves the nucleus. After leaving the nucleus, the poly-A tail is added.",G,biology,A|B|C|D|E|F|G|H|I|J
+3510,"Why is the drop in blood pressure important in retaining fluid within the capillaries?
+A. The drop in blood pressure causes blood clotting
+B. The drop in blood pressure causes an increase in plasma protein concentration
+C. The drop in blood pressure stimulates the excretion of fluids by the kidneys
+D. The drop in blood pressure causes dehydration
+E. The drop in blood pressure triggers the release of antidiuretic hormone
+F. The drop in blood pressure decreases the permeability of capillary walls
+G. The drop in blood pressure allows reabsorption of the lost fluid
+H. The drop in blood pressure increases the heart rate
+I. The drop in blood pressure leads to a constriction of the capillaries
+J. The drop in blood pressure activates the sympathetic nervous system",G,biology,A|B|C|D|E|F|G|H|I|J
+3505,"How can you determine whether or not a given populationis ingenetic equilibrium?
+A. Measure the physical characteristics of the population
+B. Compare the population to a different species
+C. Compare the population's disease resistance to other populations
+D. Check for the presence of natural selection
+E. Compare gene frequencies and genotype frequencies over two generations
+F. Analyze the population's fossil record
+G. Observe the mating behaviors within the population for one generation
+H. Examine the population's age distribution and life expectancy rates
+I. Monitor changes in the population's climate and environment
+J. Study the population's migration patterns",E,biology,A|B|C|D|E|F|G|H|I|J
+3114,"All of the following support the endosymbiotic theory that ancestors of mitochondria and chloroplasts were once independent, free-living prokaryotes EXCEPT:
+A. Mitochondria and chloroplasts divide independently of the eukaryotic host cell by a process similar to binary fission.
+B. Mitochondria and chloroplasts have ribosomes that more closely resemble those of bacteria than of eukaryotic cells.
+C. Mitochondria and chloroplasts function independently from the eukaryotic host cell.
+D. Mitochondria, chloroplasts, and bacteria have a single, circular chromosome without histones or proteins.",C,biology,A|B|C|D
+3057,"In order for the Hardy-Weinberg law to operate with respect to a population of organisms, each of the following conditions must be met EXCEPT:
+A. Genes are exchanged with other populations.
+B. Population size is large.
+C. Natural selection does not take place.
+D. Matings are random.",A,biology,A|B|C|D
+3386,"Which of the following is the source of oxygen produced during photosynthesis?
+A. O2
+B. CH4 (Methane)
+C. CO2
+D. H2O
+E. N2 (Nitrogen)
+F. C6H12O6 (Glucose)
+G. H2O2
+H. O3 (Ozone)
+I. CO
+J. C (Carbon)",D,biology,A|B|C|D|E|F|G|H|I|J
+3212,"Which is a true statement concerning genetic variation?
+A. It is created by the direct action of natural selection.
+B. It tends to be reduced by the processes involved when diploid organisms produce gametes.
+C. It must be present in a population before natural selection can act upon the population.
+D. It is always increased by the processes involved when diploid organisms produce gametes.
+E. It is not affected by the environmental changes.
+F. It can only be created by artificial selection.
+G. It is only present in a population after natural selection has acted upon the population.
+H. It arises independently of changes in the environment.
+I. It is always reduced by the processes involved when diploid organisms produce gametes.
+J. It arises in response to changes in the environment.",C,biology,A|B|C|D|E|F|G|H|I|J
+3270,"Adaptations of plants to minimize water loss in environments with high temperatures include which of the following?
+A. Thick, lush foliage
+B. Smooth, glossy leaves
+C. High rates of transpiration
+D. Shallow root systems
+E. Spines instead of leaves
+F. Numerous stomata
+G. Thin cuticles
+H. Large surface-to-volume ratios
+I. Absence of stomata
+J. Broad, flat leaves",E,biology,A|B|C|D|E|F|G|H|I|J
+3509,"Would you expect the transfer RNA molecules and the messenger RNA molecules to be the same in the cells of a horse as in similar human cells? Give reasons for your answer in each case.
+A. tRNA from cells of horse and man are basically the same, whereas the mRNA from the cells of these two animals would show much more difference.
+B. tRNA molecules show slight variations between horse and human cells, while mRNA molecules are identical.
+C. tRNA and mRNA in horse and human cells are completely identical.
+D. Both tRNA and mRNA molecules in horse and human cells vary significantly in their nucleotide sequences.
+E. tRNA molecules in horse cells contain different amino acids compared to human cells, while mRNA molecules are highly conserved.
+F. tRNA molecules in both horse and human cells are similar in function but differ in their nucleotide sequences, whereas mRNA molecules have identical sequences but differ in function.
+G. tRNA in horse and human cells are different, but mRNA are the same.
+H. tRNA molecules are completely different between horse and human cells, but mRNA molecules are similar.
+I. tRNA and mRNA in horse and human cells are completely different.
+J. The anticodon regions of tRNA are different in horses compared to humans, but the rest of the tRNA structure is the same, and mRNA molecules are completely identical.",A,biology,A|B|C|D|E|F|G|H|I|J
+3438,"The reaction A + B → C is catalyzed by enzyme K. If the reaction is in equilibrium, which of the following would allow more product C to be produced?
+A. removing some of reactant C
+B. adding a different enzyme
+C. decreasing the temperature of the system
+D. adding more enzyme K
+E. removing some of reactant A
+F. increasing the temperature of the system
+G. increasing the pressure of the system
+H. removing some of enzyme K",A,biology,A|B|C|D|E|F|G|H
+2927,"Which of the following is the correct characteristic of arteries?
+A. They carry blood towards the heart.
+B. They always carry deoxygenated blood.
+C. They carry blood away from the heart.
+D. They contain valves that prevent backflow.
+E. They always carry oxygenated blood.
+F. They have a large lumen compared to veins.
+G. They are responsible for the exchange of gases and nutrients.
+H. They form a network of small vessels called capillaries.
+I. They are thin-walled blood vessels.
+J. They contain no muscle tissue.",C,biology,A|B|C|D|E|F|G|H|I|J
+3059,"All of the following statements about plant embryogenesis are correct EXCEPT:
+A. The suspensor is derived from the basal cell.
+B. Cotyledons are derived from the apical cell.
+C. Shoot apical meristem formation occurs after seed formation.
+D. Precursors of all three plant tissue systems are formed during embryogenesis.",C,biology,A|B|C|D
+3487,"A rooster with gray feathers and a hen with the same phenotype produce 17 gray, 7 black, and 8 white chicks. What is the simplest explanation for the inheritance of these colors in chickens?
+A. The trait for gray is epistatic over the trait for black.
+B. The traits for gray and white color demonstrate incomplete dominance.
+C. The trait for black is epistatic over the trait for white.
+D. The traits for black and white color demonstrate codominance.
+E. The trait for white is epistatic over the trait for gray.
+F. The traits for black and white color demonstrate incomplete dominance.
+G. The traits for black, gray and white colors demonstrate complete dominance.
+H. The traits for gray and black color demonstrate codominance.
+I. The trait for gray is epistatic over the trait for white.
+J. The trait for black is epistatic over the trait for gray.",F,biology,A|B|C|D|E|F|G|H|I|J
+2808,"Which group is composed entirely of individuals who maintained that species are fixed (i.e., unchanging)?
+A. Aristotle, Darwin, and Lamarck
+B. Aristotle, Lyell, and Darwin
+C. Aristotle, Linnaeus, and Cuvier
+D. Aristotle, Cuvier, and Lamarck
+E. Linnaeus, Darwin, and Lamarck
+F. Linnaeus, Cuvier, and Lamarck
+G. Darwin, Cuvier, and Lamarck
+H. Lyell, Cuvier, and Darwin
+I. Lyell, Linnaeus, and Lamarck
+J. Lyell, Lamarck, and Darwin",C,biology,A|B|C|D|E|F|G|H|I|J
+3113,"Nymphaea odorata, a water lily, is an aquatic plant whose leaves and flowers float on the surface of the water. Which of the following characteristics would be expected for leaves of this plant?
+A. Stomata on the bottom surface with no water-conducting (xylem) cells
+B. stomata on the bottom surface and relatively few water-conducting (xylem) cells
+C. Stomata on the top surface with no water-conducting (xylem) cells
+D. Stomata evenly distributed on both surfaces and relatively many water-conducting (xylem) cells
+E. stomata on the top surface and relatively few water-conducting (xylem) cells
+F. No stomata and relatively many water-conducting (xylem) cells
+G. stomata on the top surface and relatively many water-conducting (xylem) cells
+H. No stomata and relatively few water-conducting (xylem) cells
+I. Stomata evenly distributed on both surfaces and relatively few water-conducting (xylem) cells
+J. stomata on the bottom surface and relatively many water-conducting (xylem) cells",E,biology,A|B|C|D|E|F|G|H|I|J
+2827,"How are chromosomal breaks produced? What factors modify these breaks?
+A. Chromosomal breaks are produced by chemical reactions
+B. Chromosomal breaks are produced by mechanical stress and are modified by cellular metabolism and DNA repair efficiency.
+C. Chromosomal breaks are produced by low energy radiation
+D. Chromosomal breaks are produced by high energy radiation and modified by factors such as radiation frequency, ion density, length of exposure, and chromosome state.
+E. Chromosomal breaks are produced by thermal fluctuations and are modified by the cell type and surrounding tissue matrix.
+F. Chromosomal breaks are produced by osmotic pressure changes and are modified by the organism's overall health and immune response.
+G. Chromosomal breaks are produced by natural cellular processes and are modified by age and environmental factors.
+H. Chromosomal breaks are produced by ultraviolet light exposure and modified by the presence of certain genetic mutations and cellular antioxidants.
+I. Chromosomal breaks are modified by temperature and pressure
+J. Chromosomal breaks are produced by magnetic fields and modified by the phase of the cell cycle and nutrient availability.",D,biology,A|B|C|D|E|F|G|H|I|J
+3496,"Discuss why one would place Cro-Magnon man higher on the evolution ladder than Neanderthal man.
+A. Cro-Magnon man created more sophisticated art and symbolic expressions
+B. Neanderthal man had a smaller cranial capacity
+C. Cro-Magnon man had larger physical size
+D. Cro-Magnon man had a more modern appearance, refined culture, and an increased intelligence
+E. Cro-Magnon man lived in larger, more complex social structures
+F. Neanderthal man had a more limited vocal range and language capability
+G. Cro-Magnon man was less adaptable to the environment
+H. Cro-Magnon man engaged in agriculture while Neanderthal man did not
+I. Neanderthal man had more advanced tool technology
+J. Cro-Magnon man had a longer lifespan, indicating superior health and diet",D,biology,A|B|C|D|E|F|G|H|I|J
+3309,"A male bacterium conjugates with a female bacterium. After conjugation , the female becomes a male. Account for this ""sex-change"".
+A. The female bacterium becomes a male by incorporating male genetic material into its own genome.
+B. The female bacterium becomes a male by dividing and producing a male offspring.
+C. The female bacterium becomes a male by undergoing a mutation in its own DNA.
+D. The female bacterium becomes a male by receiving one copy of the F factor.
+E. The female bacterium becomes a male by exposure to a particular environmental condition.
+F. The female bacterium becomes a male by exchanging plasmids with the male bacterium.
+G. The female bacterium becomes a male by receiving a sex chromosome.
+H. The female bacterium becomes a male by receiving a male chromosome.
+I. The female bacterium becomes a male by conjugating with a male bacterium.
+J. The female bacterium becomes a male by receiving multiple copies of the F factor.",D,biology,A|B|C|D|E|F|G|H|I|J
+7060,"Suppose that there are only two goods: x and y. Which of the following is NOT correct?
+A. One can have comparative advantage in producing both goods.
+B. One can have both an absolute advantage and a comparative advantage in producing x.
+C. One can have absolute advantage and no comparative advantage in producing x.
+D. One can have comparative advantage and no absolute advantage in producing x.",A,economics,A|B|C|D
+7452,"What are the chief characteristics of the British brandof socialism?
+A. Compulsory military service, government-controlled media, and a one-party political system
+B. Strict adherence to Marxist principles, state ownership of all personal property, and the abolition of private enterprise
+C. Evolutionary rather than revolutionary, government ownership and direction of key industries, extensive government planning of land use and housing, a nationalized health service, heavy redistributive income and estate taxes, and a great proliferation of social welfare agencies.
+D. Focus on individual entrepreneurship, minimal welfare provision, and a strong emphasis on traditional values
+E. Privatization of health services
+F. Free market and low taxes
+G. Decentralized planning, emphasis on mutual aid societies, and minimal government intervention
+H. Revolutionary and violent
+I. A mixed economy with partial privatization of health services, moderate taxation, and targeted social welfare programs
+J. Emphasis on green policies, extensive use of referenda for policy decisions, and a citizens' basic income",C,economics,A|B|C|D|E|F|G|H|I|J
+7123,"For an autoregressive process to be considered stationary
+A. The roots of the characteristic equation must all be greater than one in absolute value
+B. The roots of the characteristic equation must all be equal to one
+C. The roots of the characteristic equation must all be imaginary numbers
+D. The roots of the characteristic equation must all be negative
+E. The roots of the characteristic equation must all be less than one in absolute value
+F. The roots of the characteristic equation must all lie outside the unit circle
+G. The roots of the characteristic equation must all lie inside the unit circle
+H. The roots of the characteristic equation must all be positive
+I. The roots of the characteristic equation must all lie on the unit circle
+J. The roots of the characteristic equation must all be real numbers",F,economics,A|B|C|D|E|F|G|H|I|J
+7511,"Consider the following AR(2) process:
+
+yt = 1.5 yt-1 - 0.5 yt-2 + ut
+
+This is a
+A. Non-stationary and unit root process
+B. Unit root process
+C. Explosive process
+D. Unit root and explosive process
+E. Stationary and unit root process
+F. Non-stationary and explosive process
+G. Both stationary and explosive process
+H. Non-stationary process
+I. Neither stationary, unit root, nor explosive process
+J. Stationary process",B,economics,A|B|C|D|E|F|G|H|I|J
+7005,"Differentiate tariffs from quotas as barriers to free trade.
+A. Tariffs and quotas both set a maximum limit on imports
+B. Tariffs are regulatory fees on exports, while quotas are subsidies for imported goods
+C. Tariffs limit the quantity of goods, and quotas impose taxes on imports
+D. Quotas are taxes on goods, and tariffs limit the quantity of imports
+E. Tariffs are preferential trade agreements between countries, while quotas are unilateral restrictions imposed by one country on another's exports
+F. Quotas require domestic producers to limit production, while tariffs are used to standardize the price of imports and exports
+G. Quotas are fixed fees on the volume of imports, and tariffs are percentage-based restrictions on the quantity of imports
+H. Tariffs are used to ban specific goods from being imported, while quotas require a special license to import more than a certain amount
+I. Tariffs are taxes on imported goods to raise revenue and protect domestic industries, while quotas set a maximum on the quantity of a good that may be imported during a given time period.
+J. Quotas increase the price of domestic goods, while tariffs restrict the amount of goods leaving the country",I,economics,A|B|C|D|E|F|G|H|I|J
+7134,"According to Marshall and Fisher, what are thecomponents of the demand for money?
+A. Investment and Consumption
+B. Transactions Demand and Asset Demand
+C. Income and Expenditure
+D. Savings and Interest Rates
+E. Credit and Debit
+F. Wealth and Expectations
+G. Supply and Demand
+H. Exports and Imports
+I. Price Level and Inflation Rate
+J. Liquidity and Time Preference",B,economics,A|B|C|D|E|F|G|H|I|J
+7474,"If GNP = $600 billion and the money supply is $200 billion, whatis the velocity of money?
+A. 3 times per year
+B. 7 times per year
+C. 6 times per year
+D. 2.5 times per year
+E. 5 times per year
+F. 2 times per year
+G. 4 times per year
+H. 10 times per year
+I. 1 time per year
+J. 8 times per year",A,economics,A|B|C|D|E|F|G|H|I|J
+7102,"Which of the following increases the size of the tax multiplier?
+A. An increase in the reserve ratio.
+B. An increase in the money supply.
+C. A decrease in the marginal propensity to consume.
+D. A decrease in the spending multiplier.
+E. An increase in the interest rate.
+F. An increase in the marginal propensity to consume.
+G. An increase in the marginal propensity to save.",F,economics,A|B|C|D|E|F|G
+6905,"When a perfectly competitive labor market is in equilibrium,
+A. individual firms face upward sloping labor demand curves
+B. individual firms face horizontal labor demand curves
+C. there is a shortage of jobs and a surplus of workers
+D. wages are dictated by the government
+E. individual firms face downward sloping labor supply curves
+F. unemployment rate is at 0 percent
+G. there is a surplus of jobs and a shortage of workers
+H. individual firms face downward sloping labor demand curves
+I. everyone who wants to work has the opportunity to do so
+J. unemployment can reach as high as 10-15 percent",I,economics,A|B|C|D|E|F|G|H|I|J
+6976,"If the demand for grapes increases simultaneously with an increase in the supply of grapes, we can say that
+A. equilibrium quantity rises, and the price rises.
+B. equilibrium quantity rises, but the price change is ambiguous.
+C. equilibrium quantity stays the same, but the price rises.
+D. equilibrium quantity falls, but the price rises.
+E. equilibrium quantity is ambiguous, but the price rises.
+F. both equilibrium quantity and price stay the same.
+G. equilibrium quantity falls, and the price falls.
+H. equilibrium quantity rises, but the price falls.
+I. equilibrium quantity stays the same, and the price falls.
+J. equilibrium quantity falls, but the price change is ambiguous.",B,economics,A|B|C|D|E|F|G|H|I|J
+7328,"What are the effects an increase in the money supply on output on prices in the short run and in the long run?
+A. Short run: increase in output, Long run: increase in general price level
+B. Short run: decrease in output, Long run: no change in general price level
+C. Short run: decrease in output, Long run: increase in general price level
+D. Short run: increase in general price level, Long run: decrease in output
+E. Short run: no change in output, Long run: increase in general price level
+F. Short run: increase in output, Long run: no change in general price level
+G. Short run: increase in output, Long run: decrease in general price level
+H. Short run: no change in general price level, Long run: no change in output
+I. Short run: no change in output, Long run: decrease in general price level
+J. Short run: decrease in output, Long run: decrease in general price level",A,economics,A|B|C|D|E|F|G|H|I|J
+6962,"Suppose the exchange rates are 0.5 British Pound per dollar; 10 Mexican Pesos per dollar; and 100 Chinese Yuan per dollar. Further suppose that a Big Mac costs 3 dollars in America; 2 pounds in England; 50 pesos in Mexico; and 200 yuan in China. In which country is a Big Mac most expensive?
+A. America ($3).
+B. England ($4).
+C. Mexico ($5).
+D. China ($2).",C,economics,A|B|C|D
+7089,"What is the rule of 72?
+A. Rule of 72 is a formula for calculating compound interest
+B. Rule of 72 is a banking rule for determining interest
+C. Rule of 72 is a scientific law related to the conservation of energy
+D. Rule of 72 is a tax code regulation for retirement accounts
+E. Rule of 72 is a mathematical principle that determines the age of the universe
+F. Rule of 72 is an economic theory that predicts market crashes
+G. Rule of 72 is a guideline for calculating the rate of inflation
+H. Rule of 72 is used to approximate the doubling time of the population, or of interest
+I. Rule of 72 is a population growth prediction model
+J. Rule of 72 is a health guideline for daily caloric intake based on age",H,economics,A|B|C|D|E|F|G|H|I|J
+7595,"Why is it that even though the price the farmer gets for the foodhe sells will fall, the retail price need not fall so much ormay even rise?
+A. Inflationary pressures on the overall economy
+B. Retailers are increasing their profit margins
+C. Farmers are being underpaid
+D. Consumer preferences for fabricated food and less technological progress in processing and marketing
+E. Retailers are absorbing the cost of promotions and discounts
+F. The cost of raw materials is increasing
+G. A change in exchange rates impacting import prices
+H. Government subsidies affecting retail pricing structures",D,economics,A|B|C|D|E|F|G|H
+7546,"Define the Quantity Theory of Money.
+A. Price level variations are directly dependent upon changes in the quantity of money
+B. The velocity of money is the only factor that affects the price level
+C. The quantity of money in circulation has no impact on the economy or price levels
+D. Changes in the quantity of money lead to proportional changes in the output level, not the price level
+E. The quantity of money is inversely related to the velocity of money and has no direct relationship with the price level
+F. The price level is determined by the production of goods and services, while the quantity of money remains constant
+G. Price level variations are indirectly dependent upon changes in the quantity of money
+H. The quantity of money is determined by the demand for goods and services, not by the price level
+I. Price level is independent of the quantity of money
+J. Quantity of money variations are directly dependent upon changes in the price level",A,economics,A|B|C|D|E|F|G|H|I|J
+7453,"Letting C be consumption, S be savings, and Y be dispo-sableincome, suppose the consumption schedule is as follows: C = 200 + (2/3)Y . a) What would be the formula for the savings schedule? b) When would savings be zero?
+A. S = -300 + (1/2)Y, Y = 400
+B. S = -100 + (1/3)Y, Y = 600
+C. S = -200 + (3/4)Y, Y = 266.67
+D. S = Y - 200 - (2/3)Y, Y = 600
+E. S = 0, Y = 300
+F. S = -200 + Y, Y = 200
+G. S = - 200 + (1/4)Y, Y = 700
+H. S = - 200 + (1/2)Y, Y = 500
+I. S = - 200 + (1/3)Y, Y = 600
+J. S = 200 + (2/3)Y, Y = 800",I,economics,A|B|C|D|E|F|G|H|I|J
+7626,"Suppose DVD players are a normal good and are exchanged in a competitive market. All else equal an increase in household income will
+A. Have no impact on the equilibrium quantity or price.
+B. Have no impact on the equilibrium quantity but increase the price.
+C. Have no impact on the equilibrium price but increase the quantity.
+D. decrease the equilibrium quantity and increase the price.
+E. increase the equilibrium price but the change in quantity is ambiguous.
+F. Decrease the equilibrium price but the change in quantity is ambiguous.
+G. increase the equilibrium quantity and increase the price.
+H. decrease the equilibrium quantity and decrease the price.
+I. Increase the equilibrium quantity but decrease the price.
+J. Increase the equilibrium price but decrease the quantity.",G,economics,A|B|C|D|E|F|G|H|I|J
+7252,"Describe each of the following situations in terms of de-mand elasticity. a) You have a cold and the only medicine that can help you used to cost $1.50 per bottle but now costs $20.00 a bottle. You buy it anyway. b) At $80 per ticket you would buy 2 tickets, but scalpers want $100 a seat for the Stanley cup finals, so you stay at home and watch the games on television. c) Chocolate bars double in price overnight from 10$ to 20C, yet you buy the same number as before.
+A. a) Elastic demand, b) Inelastic demand, c) Elastic demand
+B. a) Elastic demand, b) Elastic demand, c) Inelastic demand
+C. a) Inelastic demand, b) Elastic demand, c) Inelastic demand
+D. a) Inelastic demand, b) Inelastic demand, c) Elastic demand",C,economics,A|B|C|D
+7175,"Consider a profit-maximizing firm in a perfectly competitive market with several sellers and several buyers (i.e., the firm is a ""price taker"" of the goods it sells and a ""price taker"" of the hourly wages it pays its workers). If a technological innovation made by someone in this firm were to significantly raise the firm's marginal physical product (but not that of any other firm's), then this innovation would
+A. lead the firm to reduce workers' wages as they now contribute less marginal revenue
+B. lead the firm to hire more workers but not to raise their wages
+C. reduce the firm's employment level but raise workers' wages
+D. lead the firm to hire more workers and to pay them higher wages
+E. raise the workers’ hourly wage as they now contribute more marginal revenue
+F. reduce the firm's employment level and lower workers' wages
+G. cause the firm to hire fewer workers but pay them higher wages
+H. lead the firm to hire the same number of workers but pay them higher wages
+I. reduce the firm’s employment level, because fewer workers are now needed
+J. have no effect on the firm's employment level or workers' wages",B,economics,A|B|C|D|E|F|G|H|I|J
+7456,"Suppose that John's MPC is constant at 3/4. If his break-even pointoccurs at $7,000, how much will John have to borrow whenhis income is $3,000?
+A. $4000
+B. $2500
+C. $6250
+D. $1750
+E. $500
+F. $1,000
+G. $7000
+H. $5500
+I. $3000
+J. $0",F,economics,A|B|C|D|E|F|G|H|I|J
+12236,"A signal source operating at 50MHz has an output impedance of 20 ohms. It is to supply power through a coaxial line to a load impedance of 150 + j40 ohms. Is it possible to design a quarter-wave transformer to match the source to the load?
+A. A quarter-wave transformer with a characteristic impedance of 100 ohms can match the source to the load
+B. The matching transformer would need a characteristic impedance = √[(20)(150)] = 54.77 ohms
+C. The matching transformer would have a characteristic impedance = \surd[(50)(150)] = 86.60 ohms
+D. A quarter-wave transformer cannot provide perfect impedance matching
+E. A quarter-wave transformer is unnecessary since the source and load impedances are already matched
+F. The load impedance can be made real only if a series inductor of - j40 ohms is added
+G. A quarter-wave transformer can provide perfect impedance matching",D,engineering,A|B|C|D|E|F|G
+11528,"A plane 1,000 Mc/sec traveling wave in air with peak electric field intensity of 1 volt/meter is incident normally on a large copper sheet. Find the average power absorbed by the sheet per square meter of area.
+A. 1.16 × 10^-7 watt/meter^2
+B. 2.32 × 10^-7 watt/meter^2
+C. 9.65 × 10^-7 watt/meter^2
+D. 5.80 × 10^-8 watt/meter^2
+E. 1.16 × 10^-5 watt/meter^2
+F. 1.16 × 10^-8 watt/meter^2
+G. 4.64 × 10^-5 watt/meter^2
+H. 5.00 × 10^-6 watt/meter^2
+I. 1.16 × 10^-6 watt/meter^2
+J. 2.34 × 10^-5 watt/meter^2",A,engineering,A|B|C|D|E|F|G|H|I|J
+11974,"A certainsteel containing 0.7 weight-percent carbon is in equilibriumwith a methane-hydrogen gas mixture containing 99 percent hydrogen and 1 percent methane by volume at 1,173°K and 1 atm.Findthe activity of carbon in the steel andthe equilibrium volume percentages of a carbon monoxide-carbondioxide mixture at equilibrium with the steelat the same conditions. Use the following data to solve theproblem and assume all gases are ideal. Data For the reaction C(s, graphite)+2H_2(_g) \rightleftharpoons CH_4(g) \DeltaG^0 = - 21,600 + 26.2T cal For the reaction CO_2(_g) + C(s, graphite)\rightleftharpoons 2CO_(g_) \DeltaG^0 = 40,800 - 41.7T cal
+A. The activity of the carbon in the steel is 0.47. The gas contains 90.6% CO and 9.4% CO2 (by volume).
+B. The activity of the carbon in the steel is 0.65. The gas contains 88.6% CO and 11.4% CO2 (by volume).
+C. The activity of the carbon in the steel is 0.48. The gas contains 93.6% CO and 6.4% CO2 (by volume).
+D. The activity of the carbon in the steel is 0.60. The gas contains 96.6% CO and 3.4% CO2 (by volume).
+E. The activity of the carbon in the steel is 0.51. The gas contains 94.6% CO and 5.4% CO2 (by volume).
+F. The activity of the carbon in the steel is 0.75. The gas contains 85.6% CO and 14.4% CO2 (by volume).
+G. The activity of the carbon in the steel is 0.55. The gas contains 92.6% CO and 7.4% CO2 (by volume).
+H. The activity of the carbon in the steel is 0.58. The gas contains 89.6% CO and 10.4% CO2 (by volume).
+I. The activity of the carbon in the steel is 0.68. The gas contains 91.6% CO and 8.4% CO2 (by volume).
+J. The activity of the carbon in the steel is 0.42. The gas contains 97.6% CO and 2.4% CO2 (by volume).",E,engineering,A|B|C|D|E|F|G|H|I|J
+11765,"A 50-hp, 500-volt shunt motor draws a line current of 4.5 amperes at no load. The shunt field resistance is 250 ohms and the armature resistance, exclusive of brushes, is 0.3 ohm. The brush drop is 2 volts. The full-load line current is 84 amperes. What is the horsepower output and efficiency ?
+A. 83.70%, 47.85 hp
+B. 86.50%, 49.00 hp
+C. 90.55%, 51.25 hp
+D. 92.10%, 52.00 hp
+E. 85.23%, 48.50 hp
+F. 90.00%, 50.75 hp
+G. 84.15%, 46.90 hp
+H. 89.45%, 50.36 hp
+I. 87.65%, 49.75 hp
+J. 88.30%, 51.10 hp",H,engineering,A|B|C|D|E|F|G|H|I|J
+11419,"A 19 ft. long tube with a (3/4) in. diameter is designed to heat air from 65°F to 210°F. The air flows at 3.0lbm/hr. Determine the constant heat fluxq_wwhich must be supplied to the air, and also the wall temperature at the end of the tube.
+A. 25.0 Btu/hr-ft^2 and 225°F
+B. 31.0 Btu/hr-ft^2 and 242°F
+C. 32.2 Btu/hr-ft^2 and 245°F
+D. 28.1 Btu/hr-ft^2 and 234°F
+E. 26.3 Btu/hr-ft^2 and 230°F
+F. 30.4 Btu/hr-ft^2 and 238°F
+G. 24.4 Btu/hr-ft^2 and 228°F
+H. 33.8 Btu/hr-ft^2 and 250°F
+I. 27.7 Btu/hr-ft^2 and 232°F
+J. 29.5 Btu/hr-ft^2 and 240°F",D,engineering,A|B|C|D|E|F|G|H|I|J
+11420,"A coin is tossed 3 times. Find the probability that all 3 are heads, (a) if it is known that the first is heads, (b) if it is known that the first 2 are heads, (c) if it is known that 2 of them are heads.
+A. (a) 1/8, (b) 1, (c) 1/4
+B. (a) 1/8, (b) 1/2, (c) 3/8
+C. (a) 1/6, (b) 1/3, (c) 1/6
+D. (a) 1/4, (b) 1/2, (c) 1/4
+E. (a) 1/2, (b) 1, (c) 1/3
+F. (a) 1/2, (b) 1/4, (c) 1/8
+G. (a) 1/4, (b) 1, (c) 0
+H. (a) 1/2, (b) 1/2, (c) 1/2
+I. (a) 1/8, (b) 1/4, (c) 1/2
+J. (a) 1/3, (b) 1/6, (c) 1/3",D,engineering,A|B|C|D|E|F|G|H|I|J
+11472,"A heat exchanger that is used for cooling oil is constructed with a bank of 200 tubes of outside diameter d_0 = 0.5 in, inside diameterd_i= 0.428 in, and length L = 4 ft. The tubes are enclosed inside a shell of inside diameter D_i = 10 in. Water at 65°F is flowing at a rate of 10,000 gal/hr inside the tubes, and oil at 190°F is flowing at 1,500 gal/hr in the shell side. Determine the exit temperature of the oil.
+A. 190°F
+B. 150°F
+C. 160°F
+D. 145°F
+E. 167°F
+F. 170°F
+G. 165°F
+H. 180°F
+I. 175°F
+J. 155°F",E,engineering,A|B|C|D|E|F|G|H|I|J
+11401,"For sea water with \gamma = 5 mhos/meter and\epsilon_r= 80, find the distance a radio signal can be transmitted at 25kcps and 25mcps, if the range is taken to be the distance at which 90 per cent of the wave amplitude is attenuated.
+A. 4.5 meters for 25kcps and 15 cm for 25mcps
+B. 5 meters for 25mcps and 20 cm for 25kcps
+C. 1 meter for 25kcps and 30 cm for 25mcps
+D. 3.22 meters for both 25kcps and 25mcps
+E. 2.3 meters for 25kcps and 10 cm for 25mcps
+F. 3.22 meters for 25mcps and 10 cm for 25kcps
+G. 2.5 meters for 25mcps and 5 cm for 25kcps
+H. 3.22 meters for 25kcps and 10 cm for 25mcps
+I. 3.22 cm for 25kcps and 10 meters for 25mcps
+J. 10 cm for both 25kcps and 25mcps",H,engineering,A|B|C|D|E|F|G|H|I|J
+11698,"A concentrated charge of 10 microcoulombs exists in an extensive mass of Bakelite. Determine the total energy contained in the electric field outside a radial distance of (a) 10 meters, (b) 1 meter, (c) 10 centimenters, and (d) centimeter.
+A. (a) 0.10 joule, (b) 1.0 joule, (c) 10 joules, (d) 100 joules
+B. (a) 0.50 joule, (b) 5.0 joules, (c) 50 joules, (d) 500 joules
+C. (a) 0.0001 joule, (b) 0.001 joule, (c) 0.01 joule, (d) 0.1 joule
+D. (a) 0.020 joule, (b) 0.200 joule, (c) 2.0 joules, (d) 20 joules
+E. (a) 1.0 joule, (b) 10 joules, (c) 100 joules, (d) 1000 joules
+F. (a) 0.001 joule, (b) 1.0 joule, (c) 10 joules, (d) 100 joules
+G. (a) 2.0 joules, (b) 20 joules, (c) 200 joules, (d) 2000 joules
+H. (a) 0.002 joule, (b) 0.02 joule, (c) 0.2 joule, (d) 2.0 joules
+I. (a) 0.010 joule, (b) 0.10 joule, (c) 1.0 joule, (d) 10 joules
+J. (a) 0.005 joule, (b) 0.05 joule, (c) 0.5 joule, (d) 5.0 joules",I,engineering,A|B|C|D|E|F|G|H|I|J
+11572,"Given the transfer function of a two port network H( \omega ) = \vertH(\omega_0)\vert exp(-j\textphi). \omega Derive an expression for output as a function of time, for the single frequency input v_i =cos\omega_0t. \omega
+A. |H(ω_0)|cos(2ω_0t - φ)
+B. ertH(\omega_0)ertcos(\omega_0t)
+C. |H(ω_0)|exp(-jω_0t)
+D. ertH(\omega_0)ertcos(\omega_0t - 	extphi)
+E. ertH(\omega_0)ertcos(\omega_0t + 	extphi)
+F. |H(ω_0)|exp(jω_0t)
+G. |H(ω_0)|sin(2ω_0t + φ)
+H. |H(ω_0)|sin(ω_0t - φ)
+I. |H(ω_0)|sin(ω_0t + φ)
+J. ertH(\omega_0)ertsin(\omega_0t - 	extphi)",D,engineering,A|B|C|D|E|F|G|H|I|J
+11451,"Determine the available energy that can be associated with a 10 m^3 perfect vacuum and its surroundings at a pressure of 0.100MPaand at a temperature of 300K.
+A. 750 kJ
+B. 1,500 kJ
+C. 250 kJ
+D. 2,000 kJ
+E. 1,250 kJ
+F. 1,000 kJ
+G. 600 kJ
+H. 3,000 kJ
+I. 500 kJ
+J. 4,000 kJ",F,engineering,A|B|C|D|E|F|G|H|I|J
+11946,"A ventilating duct with non-gray interior surfaces, at temperatureT_w= 600°K, has a uniform thickness of 12 mm andabsorption coefficient 120/m. A vapor at 1100°K is flowingthrough the channel. The black bodyradiosityof the vaporincreases linearly, at each wall over the boundary layerthickness of 2 mm, and reaches a constant value at the outletof the duct. Calculate the resultant radiant heat transferat the wall.
+A. 4.5 × 10^4 W/m^2
+B. 8.0 × 10^3 W/m^2
+C. 1.5 × 10^4 W/m^2
+D. 2.5 × 10^4 W/m^2
+E. 2.0 × 10^4 W/m^2
+F. 3.5 × 10^4 W/m^2
+G. 5.0 × 10^3 W/m^2
+H. 6.0 × 10^4 W/m^2
+I. 1.0 × 10^4 W/m^2
+J. 7.5 × 10^4 W/m^2",F,engineering,A|B|C|D|E|F|G|H|I|J
+11686,"A sinusoidal voltage having a frequency of 1 MHz and a peak value of 10 volts is applied to the plates of a parallel plate capacitor which are 2 cm. apart. If an electron is released from one plate at an instant when the applied voltage is zero, find the position of the electron at any subsequent time t. Assume that the initial velocity of the electron is 10^6 m/sec in the X-direction, which is perpendicular to the plates. No magnetic field is present.
+A. 1.40 × 10^7t + 2.23 cos (2π × 10^6t) m
+B. 1.50 × 10^6t - 2.23 sin (2\pi × 10^6t) m
+C. 1.40 × 10^7t - 2.23 sin (2\pi × 10^6t) m
+D. 1.50 × 10^6t + 2.23 cos (2π × 10^6t) m
+E. 1.50 × 10^7t - 2.23 tan (2π × 10^6t) m
+F. 1.50 × 10^6t + 2.23 sin (2π × 10^6t) m
+G. 1.60 × 10^7t - 2.00 sin (2π × 10^6t) m
+H. 1.50 × 10^7t - 1.23 sin (2π × 10^6t) m
+I. 1.50 × 10^7t - 2.23 cos (2\pi × 10^6t) m
+J. 1.50 × 10^7t - 2.23 sin (2\pi × 10^6t) m",J,engineering,A|B|C|D|E|F|G|H|I|J
+12143,"Estimate the pressure which would be exerted by 8.2 lb of CO in a 1-ft^3 container at - 78°F, employing (a) the ideal-gas equation, (b) the vanderWaals equation of state, and (c) theRedlich-Kwongequation.
+A. 1500psia = 102.0atm, 88.9 atm, 92.4atm
+B. 1000psia = 68.0atm, 58.8 atm, 62.5atm
+C. 850psia = 57.8atm, 50.0 atm, 53.1atm
+D. 1400psia = 95.2atm, 82.3 atm, 85.0atm
+E. 900psia= 60.9atm, 70.5 atm, 75.8atm
+F. 800psia = 54.4atm, 47.6 atm, 50.2atm
+G. 1600psia = 108.9atm, 94.5 atm, 98.6atm
+H. 1200psia= 81.7atm, 68.2 atm, 70.8atm
+I. 1300psia= 88.2atm, 75.6 atm, 80.9atm
+J. 1100psia= 75.1atm, 65.7 atm, 68.5atm",H,engineering,A|B|C|D|E|F|G|H|I|J
+11976,"A furnace operates with a gas inlet temperature of 650°C andan outlet temperature of 1,100°C. The inlet gas is composedof 10 percent CO, 20 percent CO_2 and 70 percent N_2 by volume.The combustion occurs with astoichiometric amountof air. Using the following data, determine the maximumflame temperature and the heat supplied to the furnacein Btu/ft^3 of exhaust gas. Data Standard heats of formation CO;\DeltaH_f=- 26,400 cal/mole CO_2;\DeltaH_f=- 94,050 cal/mole Heat capacities (cal deg^-1mole^-1) CO;C_p = 6.79 + 0.98 × 10^-3T - 0.11 × 10^5T^-2 O_2;C_p = 7.16 + 1.00 × 10^-3T - 0.40 × 10^5T^-2 CO_2;C_p = 10.55 + 2.16 × 10^-3T - 2.04 × 10^5T^-2 N_2;C_p = 6.66 + 1.02 × 10^-3T Combustion reaction 2CO_(_g)_ + O_2(g) \rightleftharpoons 2CO_2(g)
+A. Maximum flame temperature is 1,750°C, Heat supplied to the furnace is 4.5 Btu/ft^3 exhaust gas
+B. Maximum flame temperature is 1,601°C, Heat supplied to the furnace is 4.85 Btu/ft^3 exhaust gas
+C. Maximum flame temperature is 1,650°C, Heat supplied to the furnace is 5.2 Btu/ft^3 exhaust gas
+D. Maximum flame temperature is 1,500°C, Heat supplied to the furnace is 5.5 Btu/ft^3 exhaust gas
+E. Maximum flame temperature is 1,550°C, Heat supplied to the furnace is 4.2 Btu/ft^3 exhaust gas
+F. Maximum flame temperature is 1,800°C, Heat supplied to the furnace is 3.9 Btu/ft^3 exhaust gas
+G. Maximum flame temperature is 1,450°C, Heat supplied to the furnace is 5.8 Btu/ft^3 exhaust gas
+H. Maximum flame temperature is 1,800°C, Heat supplied to the furnace is 5.0 Btu/ft^3 exhaust gas
+I. Maximum flame temperature is 1,701°C, Heat supplied to the furnace is 4.7 Btu/ft^3 exhaust gas
+J. Maximum flame temperature is 1,700°C, Heat supplied to the furnace is 4.0 Btu/ft^3 exhaust gas",B,engineering,A|B|C|D|E|F|G|H|I|J
+11497,"The transpiration cooling with liquid oxygen as cooling mediumis used to protect the combustion chamber walls frombeing destroyed. The temperature of inside surface of wallsshould be maintained at 1170°R by adding liquid oxygenat 170°R through the porous walls into the chamber. The temperature of the gas stream is 3100°R and the heat transfercoefficient for the turbulent flow without the addition ofoxygen is 250 Btu / hr. ft^2. °F. Find the required rate of addition of oxygen.
+A. 35.6 lb-moles / hr.ft^2
+B. 18.9 lb-moles / hr.ft^2
+C. 28.5 lb-moles / hr.ft^2
+D. 25.0 lb-moles / hr.ft^2
+E. 40.2 lb-moles / hr.ft^2
+F. 30.7 lb-moles / hr.ft^2
+G. 22.3 lb-moles / hr.ft^2
+H. 33.3 lb-moles / hr.ft^2
+I. 20.7 lb-moles / hr.ft^2
+J. 15.4 lb-moles / hr.ft^2",C,engineering,A|B|C|D|E|F|G|H|I|J
+11895,"In one of the experiments on gravitational sedimentation equilibrium, the number of gamboge particles in water at 20°C were monitored. (Gamboge is a yellow pigment not soluble in water.) The following data was obtained: Height in \mum: 0 25 50 75 100 Mean no. of particles: 203 166 136 112 91 Assuming that the gamboge particles had a mean volume equal to 9.78 × 10^-21 m^3 and a density equal to 1351 kg/m^3, calculate the Boltzmann constant.
+A. 1.34 × 10^-23 J /°K
+B. 1.54 × 10^-23 J /°K
+C. 1.42 × 10^-23 J /°K
+D. 1.38 × 10^-23 J /°K
+E. 1.64 × 10^-23 J /°K
+F. 1.44 × 10^-23 J /°K
+G. 1.21 × 10^-23 J /°K
+H. 1.47 × 10^-23 J /°K
+I. 1.24 × 10^-23 J /°K
+J. 1.50 × 10^-23 J /°K",F,engineering,A|B|C|D|E|F|G|H|I|J
+11505,"The feedback factor of a Wien bridge oscillator using Op-Amp is
+A. 3/2
+B. 1/4
+C. 0
+D. 1/5
+E. 1/3
+F. 2
+G. 1/2
+H. 1
+I. 5/4
+J. 4/3",G,engineering,A|B|C|D|E|F|G|H|I|J
+12100,"A plate cam causes a reciprocating roller follower to execute asimple harmonic motion with a maximum displacement of 2 in.The motion comprises of a rise for 140° and a fall for 160° of the cam rotation.The follower's roller is 1 in. in radiusand the pressure angle should not exceed 35°. Evaluate: (1)theperpendicular distance between the follower axis and thecamshaft axis. (2)thesmallest possible size of the cam for noiseless and efficientfunctioning of the cam.
+A. Perpendicular distance: 1.75 in, Base circle radius: 1.65 in
+B. Perpendicular distance: 1.35 in, Base circle radius: 1.24 in
+C. Perpendicular distance: 1.5 in, Base circle radius: 1.3 in
+D. Perpendicular distance: 1.2 in, Base circle radius: 1.24 in
+E. Perpendicular distance: 1.4 in, Base circle radius: 1.35 in
+F. Perpendicular distance: 1.286 in, Base circle radius: 1.5 in
+G. Perpendicular distance: 1.1 in, Base circle radius: 1.2 in
+H. Perpendicular distance: 1.286 in, Base circle radius: 1.45 in
+I. Perpendicular distance: 1.286 in, Base circle radius: 1.24 in
+J. Perpendicular distance: 1.286 in, Base circle radius: 1.75 in",I,engineering,A|B|C|D|E|F|G|H|I|J
+11587,"What is the fugacity of water at a temperature of 298°K and a pressure of 10^7N/m^2? Assume that the following properties are known, for water at 298°K. \rho = 997 kg/m^3 MW = 18.02 kg/kg mol P_c = vapor pressure = 3,160 N/m^2
+A. 9000 N/m^2
+B. 500 N/m^2
+C. 10000 N/m^2
+D. 3400 N/m^2
+E. 4000 N/m^2
+F. 7500 N/m^2
+G. 3160 N/m^2
+H. 1500 N/m^2
+I. 2500 N/m^2
+J. 2000 N/m^2",D,engineering,A|B|C|D|E|F|G|H|I|J
+6155,"In DNA adenine normally pairs with:
+A. protein.
+B. cytosine.
+C. thymine.
+D. guanine.
+E. nucleotide.
+F. adenine.
+G. ribose.
+H. phosphate.
+I. deoxyribose.
+J. uracil.",C,health,A|B|C|D|E|F|G|H|I|J
+6470,"Which of the following is NOT one of the most rewarding aspects of being a grandparent as reported by grandparents?
+A. Sharing wisdom and life experiences
+B. Having a second chance at parenting
+C. Watching grandchildren grow and develop
+D. Having others to wait on you
+E. Reliving their own childhood through their grandchildren
+F. Having an excuse to indulge in childish activities
+G. Spoiling the grandchildren
+H. Feelings of immortality
+I. Being able to spend quality time with family
+J. Remembering when they were grandchildren",D,health,A|B|C|D|E|F|G|H|I|J
+6238,"A 54-year-old woman comes to the emergency department because of severe jaw pain since undergoing a painful dental procedure 1 day ago. The patient was prescribed codeine after the procedure and instructed to take the medication every 4 hours, but she has continued pain despite adherence to this analgesic regimen. Other members of her family also have experienced poor pain control with codeine. Which of the following is the most likely explanation for this therapeutic failure?
+A. Increased plasma protein-binding of codeine
+B. Interference from the dental procedure
+C. Insufficient dosage of codeine prescribed by the dentist
+D. Allergic reaction to codeine preventing pain relief
+E. Resistance to codeine developed over time
+F. Decreased metabolism of codeine to morphine
+G. Overuse of codeine leading to tolerance
+H. Deficiency of κ receptors
+I. Decreased absorption of codeine",F,health,A|B|C|D|E|F|G|H|I
+6317,"Intestinal motility is a complex process, orchestrated by nerves, hormones and the presence of food in the stomach. Which statement about this process is correct?
+A. At the start of a meal, the stomach increases its ""tone"" in order to develop pressure which will lead to expulsion of its contents, via the pylorus
+B. The presence of partially digested fat and starch in the duodenum, speeds up intestinal motility
+C. The migrating motor complex is chiefly responsible for the absorption of nutrients after a meal has been consumed
+D. The migrating motor complex is chiefly responsible for peristaltic movement of food after a meal has been consumed
+E. The release of glucagon after eating a meal will speed up the emptying of the stomach
+F. The stomach decreases its ""tone"" at the end of a meal to develop pressure which will lead to expulsion of its contents, via the pylorus
+G. The presence of partially digested fat and starch in the duodenum, slows intestinal motility
+H. The release of insulin after eating a meal will speed up the emptying of the stomach
+I. The presence of partially digested protein and fiber in the duodenum, speeds up intestinal motility",G,health,A|B|C|D|E|F|G|H|I
+6341,"The Supreme Court has now ruled that older workers need no longer prove _____________ to win a job discrimination suit.
+A. Unfair treatment
+B. Discrimination
+C. Employment history
+D. Intention
+E. Economic loss
+F. Age bias
+G. Work environment hostility
+H. Health conditions
+I. Negative impact
+J. Previous warnings",D,health,A|B|C|D|E|F|G|H|I|J
+6505,"A 33-year-old woman comes to the physician because of a 2-day history of mild nausea, increased urinary urgency and frequency, and constipation. She also has had a 4.5-kg (10-lb) weight loss during the past 2 weeks and a 3-week history of vaginal bleeding. Pelvic examination shows a nodular cervix with an irregular, friable posterior lip, and a rock-hard, irregular, immobile pelvic mass that extends across the pelvis. Examination of biopsy specimens from the cervix and anterior wall of the vagina show well-differentiated keratinizing squamous cell carcinoma. Which of the following best describes the pathogenesis of this patient's disease?
+A. Inactivation of cellular p53
+B. Insertion of viral promotors adjacent to cellular growth factor genes
+C. Specialized transduction
+D. Transactivation of cellular growth factor genes by TAX",A,health,A|B|C|D
+6490,"A 65-year-old female is admitted to the hospital after experiencing aphasia and right-sided hemiparesis. She subsequently develops urinary incontinence. There is no evidence of urinary tract infection and no prior history of urinary pathology. The most likely diagnosis is
+A. autonomic neurogenic bladderv
+B. Detrusor underactivity
+C. Overactive bladder
+D. uninhibited neurogenic bladder
+E. Functional incontinence
+F. Overflow incontinence
+G. motor paralytic bladder
+H. Stress incontinence
+I. Spastic neurogenic bladder",D,health,A|B|C|D|E|F|G|H|I
+6196,"What is the estimated global prevalence of untreated dental caries?
+A. 30%
+B. 10%
+C. 70%
+D. 60%
+E. 20%
+F. 50%
+G. 100%
+H. 90%
+I. 40%
+J. 80%",I,health,A|B|C|D|E|F|G|H|I|J
+6649,"Collagen fibres:
+A. are re-established in the first five days of wound healing.
+B. take some time to re-establish.
+C. hinder the process of wound healing.
+D. help in blood clotting during wound healing.
+E. get destroyed during wound healing.
+F. are not involved in the wound healing process.
+G. are immediately re-established during wound healing.
+H. are replaced by elastin during wound healing.
+I. are not needed if a wound is healing by primary intention.",B,health,A|B|C|D|E|F|G|H|I
+6237,"An epidemic involving 10 individuals of all ages occurs in a migrant worker camp. None of the patients has had any form of immunization. Most cases present with fever, chills, tachypnea, sore throat, swollen glands, and severe malaise. One patient dies from respiratory complications, and another dies from myocardial involvement. A gram-positive rod is isolated from the respiratory tracts of 7 of the patients. The most likely cause of the outbreak is
+A. Streptococcus pneumoniae
+B. Mycoplasma pneumoniae
+C. Staphylococcus aureus
+D. Bordetella pertussis
+E. Streptococcus pyogenes
+F. Mycobacterium tuberculosis
+G. Haemophilus influenzae
+H. Legionella pneumophila
+I. Corynebacterium diphtheriae
+J. Epstein-Barr virus",I,health,A|B|C|D|E|F|G|H|I|J
+6156,"Asp235Phe in a molecular report indicates that:
+A. phenylalanine has been replaced by leucine.
+B. aspartic acid has been replaced by glutamine.
+C. asparagine has been replaced by phenylalanine.
+D. aspartic acid has been replaced by phenylalanine.
+E. phenylalanine has been replaced by glutamine.
+F. phenylalanine has been replaced by asparagine.
+G. phenylalanine has been replaced by aspartic acid.
+H. aspartic acid has been replaced by asparagine.
+I. asparagine has been replaced by aspartic acid.
+J. glutamine has been replaced by phenylalanine.",D,health,A|B|C|D|E|F|G|H|I|J
+6583,"Which of the following statements is not true?
+A. Humans cannot convert any fatty acids into docosahexaenoic acid
+B. Flaxseeds are a rich source of docosahexaenoic acid
+C. Docosahexaenoic acid levels are consistently higher in vegans than in omnivores
+D. Vegan diets provide an abundance of docosahexaenoic acid naturally
+E. Lack of docosahexaenoic acid in vegans causes visual and cognitive impairment
+F. Docosahexaenoic acid is only found in animal-based foods
+G. Docosahexaenoic acid can be synthesised from linolenic acid in vegans
+H. All vegans require docosahexaenoic acid supplements to remain healthy
+I. Microalgae can be used to synthesise docosahexaenoic acid
+J. Docosahexaenoic acid is absent from vegan diets",E,health,A|B|C|D|E|F|G|H|I|J
+6068,"Describe the coronavirus structure.
+A. Club shaped glycoprotein spikes protrude through a lipid bilayer
+B. An icosahedral structure with an envelope
+C. An icosahedral large pleomorphic virus
+D. Large regimented barrel shaped virus",C,health,A|B|C|D
+6060,"Which of the following rules regarding the interconversion of fuels are central to the integration of metabolic pathways?
+A. Fatty acids can be made from and converted to carbohydrates and amino acids
+B. Carbohydrates can be made from and converted to amino acids and fatty acids
+C. Fatty acids can be made from but not converted to carbohydrates and amino acids
+D. Amino acids can be made from and converted to fatty acids",C,health,A|B|C|D
+6690,"A 32-year-old man and his 29-year-old wife come to the office for evaluation for infertility. The wife's gynecologist has reported that her anatomic and physiologic evaluation disclosed no abnormalities and that assessment of potential male factors is needed. The husband is 188 cm (6 ft 3 in) tall with fair skin and little facial hair. He has mild gynecomastia and small, firm testicles. No sperm are seen on semen analysis. Which of the following tests is most likely to establish the underlying cause of this couple's infertility?
+A. Karyotype from peripheral leukocytes
+B. Serum estrogen and testosterone concentrations
+C. Serum follicle-stimulating hormone and luteinizing hormone concentrations
+D. Serum prolactin concentration",A,health,A|B|C|D
+6553,"A 14-year-old girl is brought to the physician after her mother learned that she began having sexual intercourse with various partners 1 month ago. She does not use condoms or other contraception. The mother is concerned about her behavior. The patient's parents separated 3 months ago. She had been an honor student and excelled in sports and leadership positions at school before the separation. Since the separation, however, she has become sullen, defiant, and rebellious. She has begun smoking cigarettes, disobeying her curfew, and being truant from school. This patient is most likely using which of the following defense mechanisms?
+A. Acting out
+B. Intellectualization
+C. Projection
+D. Regression
+E. Displacement
+F. Rationalization
+G. Denial
+H. Repression
+I. Sublimation
+J. Reaction formation",A,health,A|B|C|D|E|F|G|H|I|J
+6510,"Which of the following confirmed values meet the diagnostic threshold for diabetes?
+A. fasting blood glucose ≥ 160 mg/dl
+B. fasting blood glucose ? 140 mg/dl
+C. fasting blood glucose ≥ 126 mg/dl
+D. random glucose > 180 mg/dl
+E. fasting blood glucose ? 120 mg/dl
+F. 2 hour post prandial glucose ≥ 140 mg/dl
+G. random glucose > 120 mg/dl
+H. random glucose > 160 mg/dl
+I. 2 hour post prandial glucose ≥ to 126 mg/dl
+J. 2 hour post prandial glucose ≥ 160 mg/dl",C,health,A|B|C|D|E|F|G|H|I|J
+6154,"The term ""senescence"" refers to
+A. The loss of physical abilities
+B. The process of cellular division
+C. The development of disease
+D. Biological aging
+E. The process of becoming older
+F. The acquisition of knowledge and wisdom
+G. The loss of mental abilities
+H. The process of physical growth
+I. An increased vulnerability
+J. The increase in physical strength",I,health,A|B|C|D|E|F|G|H|I|J
+6199,"Cholesterol and fatty acids absorbed from the intestinal lumen are packaged into which types of lipoproteins and secreted from the enterocytes into the lymph?
+A. Chylomicrons only
+B. LDL only
+C. VLDL and LDL
+D. Chylomicrons and HDL
+E. VLDL and HDL
+F. HDL only
+G. LDL and VLDL
+H. HDL and LDL
+I. Chylomicrons and VLDL
+J. Chylomicrons and LDL",D,health,A|B|C|D|E|F|G|H|I|J
+6046,"A 72-year-old man comes to the physician because of a 7-month history of leg weakness and dry eyes and mouth. He also has had a 10.4-kg (23-lb) weight loss over the past 4 months despite no change in appetite. He has smoked one and a half packs of cigarettes daily for 50 years. He drinks 4 oz of alcohol daily. He has peptic ulcer disease and emphysema. Medications include cimetidine, theophylline, and low-dose prednisone. Examination shows mild ptosis. He has a barrelshaped chest. Breath sounds are distant. There is moderate weakness of proximal muscles of the lower extremities. Reflexes are absent. He has difficulty rising from a chair. Sensory examination shows no abnormalities. An x-ray shows a hyperinflated chest and a 3 x 4-cm mass in the right hilum. His neurologic findings are most likely due to a lesion involving which of the following?
+A. Presynaptic neuromuscular junction
+B. Spinal cord
+C. Muscle membrane
+D. Central nervous system
+E. Parasympathetic nervous system
+F. Motor cortex
+G. Postsynaptic neuromuscular junction
+H. Peripheral nerve
+I. Sympathetic nervous system
+J. Sensory nerve",A,health,A|B|C|D|E|F|G|H|I|J
+10984,"Which of the given formulas of PL is the best symbolization of the following sentence?
+If Beth rides her bike, she gets to work earlier.
+A. W ∨ B
+B. B ⊃ W
+C. B ∨ W
+D. ¬B ⊃ W
+E. W ⊃ B
+F. ¬W ⊃ B
+G. B ≡ ¬W
+H. B ≡ W
+I. B & W
+J. Both A and B",B,philosophy,A|B|C|D|E|F|G|H|I|J
+10942,"Anscombe claims that on Sidgwick’s view, the badness of an action must be estimated in light of:
+A. whether it upholds social justice.
+B. whether it violates divine law.
+C. whether it violates any duties.
+D. its potential for causing harm.
+E. the actor's intentions.
+F. its expected consequences.
+G. its actual consequences.
+H. its potential benefits.
+I. its alignment with personal values.
+J. the cultural norms of the time.",F,philosophy,A|B|C|D|E|F|G|H|I|J
+10868,"Kamm claims that Sandel's moral distinction between treatment and enhancement assumes that
+A. enhancement is always morally superior to treatment.
+B. enhancement is inherently unnatural.
+C. human beings have a moral duty to enhance themselves.
+D. medical treatment is always more morally acceptable than enhancement.
+E. there is no moral difference between treatment and enhancement.
+F. Sandel's view is based on a misunderstanding of nature.
+G. there is a clear moral hierarchy between treatment and enhancement.
+H. nature in itself has no moral value.
+I. nature is sacred and should be honored.
+J. human beings want enhancement more than they want treatment.",I,philosophy,A|B|C|D|E|F|G|H|I|J
+11239,"Zhuangzi describes a state as ziran, which means which of the following?
+A. Compassion
+B. Enlightenment
+C. Non-action
+D. Selflessness
+E. Balance
+F. Thoughtfulness
+G. Meditation
+H. Spontaneity
+I. Harmony
+J. Persistence",H,philosophy,A|B|C|D|E|F|G|H|I|J
+11021,"Cicero argues that we will never go morally astray if we:
+A. follow religious edicts.
+B. follow historical precedents.
+C. follow the teachings of philosophers.
+D. follow Nature as our guide.
+E. follow our conscience.
+F. follow the laws.
+G. follow our personal desires.
+H. follow our instincts.
+I. follow societal norms.
+J. follow our friends and family.",D,philosophy,A|B|C|D|E|F|G|H|I|J
+11010,"When someone responds to your argument with a sarcastic statement such as, ""Yeah, right. Like that's ever going to happen,"" that person may have committed which fallacy?
+A. tu quoque
+B. appeal to ignorance
+C. argumentum ad populum
+D. false cause
+E. appeal to indignation
+F. appeal to spite
+G. horse laugh
+H. slippery slope
+I. straw man fallacy
+J. argumentum ad hominem",G,philosophy,A|B|C|D|E|F|G|H|I|J
+11127,"Which of the given formulas of PL is the best symbolization of the following sentence?
+Either England's importing beef is a necessary condition for France's subsidizing agriculture or China promotes human rights given that South Africa doesn't supply diamonds.
+A. (F ⊃ E) ∨ (~S ⊃ C)
+B. (E ≡ F) ∨ (C ⊃ ~S)
+C. (F ≡ E) ∨ (S ≡ ~C)
+D. (F ⊃ E) ∨ (S ≡ C)
+E. (E ⊃ F) ∨ (S ⊃~C)
+F. (F ⊃ E) ∨ (~S ≡ C)
+G. (E ⊃ F) ∨ (C ⊃ S)
+H. (E ⊃ F) ∨ (~C ⊃ S)
+I. (E ⊃ F) ∨ (~S ≡ ~C)
+J. (E ⊃ F) ∨ (C ≡ ~S)",A,philosophy,A|B|C|D|E|F|G|H|I|J
+10781,"Identify the conclusion of the following argument. Remember to remove any conclusion indicators. It is wrong for society to kill a murderer. This follows for the reason that if a murderer is wrong in killing his victim, then society is also wrong in killing the murderer. And a murderer is wrong in killing his victim.
+A. A murderer is not wrong in killing his victim.
+B. If a murderer is right in killing his victim, then society is also right in killing the murderer.
+C. And a murderer is wrong in killing his victim.
+D. This does not follow for the reason that if a murderer is wrong in killing his victim, then society is also wrong in killing the murderer.
+E. And a murderer is not wrong in killing his victim.
+F. This follows for the reason that if a murderer is wrong in killing his victim, then society is also wrong in killing the murderer.
+G. If a murderer is wrong in killing his victim, then society is also wrong in killing the murderer.
+H. Society is not wrong in killing the murderer.
+I. A murderer is right in killing his victim.
+J. It is wrong for society to kill a murderer.",J,philosophy,A|B|C|D|E|F|G|H|I|J
+11247,"Which of the following explanations best fits the fallacy of ignorance of refutation?
+A. asserting an argumentative opponent has taken an easily defeated position, which the opponent has not really taken, defeating the position, and acting as if you've done significant damage to that person's overall argument.
+B. causing confusion during refutation because of a real or feigned lack of the ability to engage in refutation
+C. characterizing an opposing argument in such a way to make it or its consequences appear to be ridiculous
+D. arguing an action should be taken based only on the need to be loyal to someone or to a group",B,philosophy,A|B|C|D
+11015,"Philosophy is concerned primarily with identifying beliefs about human existence and evaluating arguments that support those beliefs.  These activities can be summarized in two questions that drive philosophical investigations:
+A. who really believes X? and how can we explain differences in people's beliefs?
+B. what is the origin of thought? and how does it impact our actions?
+C. what do you mean? and how do you know?
+D. how do beliefs shape society? and why do beliefs differ?
+E. how do philosophers argue? and are their differences important?
+F. why is there something rather than nothing? and how can we be sure?
+G. how can we prove it? and what if we're wrong?
+H. why should we bother? and what are the consequences of our believing one thing over another?",C,philosophy,A|B|C|D|E|F|G|H
+10793,"According to Kant, an imperative that represents an action as a necessary means to something that is willed is what kind of imperative?
+A. categorical
+B. autonomous
+C. consequential
+D. hypothetical
+E. practical
+F. noumenal
+G. moral
+H. universalizable
+I. conditional
+J. theoretical",D,philosophy,A|B|C|D|E|F|G|H|I|J
+10905,"Nathanson supports which of the following kinds of retributivism?
+A. proportional
+B. equality
+C. retaliatory
+D. punitive
+E. compensatory
+F. absolute
+G. restorative
+H. corrective
+I. preventive
+J. consequential",A,philosophy,A|B|C|D|E|F|G|H|I|J
+11240,"Where did people believe in the goddess known as Holy Mother of Mount Fairy Peach?
+A. China
+B. Silla
+C. Goguryeo
+D. Joseon",B,philosophy,A|B|C|D
+11133,"Which of the following is evidence that de Marneffe cites in support of the claim that increased availability of a drug leads to increased use of that drug?
+A. Marijuana use increased in states where it was legalized.
+B. Methamphetamine use increased during periods when it was readily available.
+C. The percentage of physicians who use psychoactive drugs is much higher than the general population.
+D. Heroin use was much higher among military personnel in Vietnam than it was among veterans who returned to the United States.
+E. The number of smokers increased after the introduction of e-cigarettes.
+F. all of the above
+G. Cocaine use decreased in areas where it was strictly prohibited.
+H. Alcohol abuse declines when the law restricts the times it can be legally sold.
+I. The use of prescription drugs is higher in countries where they are easily accessible.
+J. The consumption of caffeine increased with the rise of coffee shops.",D,philosophy,A|B|C|D|E|F|G|H|I|J
+11220,"Construct a complete truth table for the following argument. Then, using the truth table, determine whether the argument is valid or invalid. If the argument is invalid, choose an option which presents a counterexample. (There may be other counterexamples as well.)
+J ≡ ~K
+J ∨ L
+~K / L
+A. Invalid. Counterexample when J is true and K and L are false
+B. Valid. No counterexample exists.
+C. Valid
+D. Invalid. Counterexample when J and K are true and L is false
+E. Invalid. Counterexample when J and K are false and L is true
+F. Invalid. Counterexample when J and L are true and K is false
+G. Invalid. Counterexample when all are false.
+H. Invalid. Counterexample when L is true and J and K are false
+I. Invalid. Counterexample when K and L are true and J is false
+J. Invalid. Counterexample when K is true and J and L are false",A,philosophy,A|B|C|D|E|F|G|H|I|J
+10954,"Which of the given formulas of PL is the best symbolization of the following sentence?
+Doctors are helpful unless their patients are rude.
+A. H ∨ R
+B. ~H ∧ R
+C. ~H ↔ R
+D. H • R
+E. H ∧ ~R
+F. ~H ∨ R
+G. H ↔ R
+H. H → R
+I. H ≡ R
+J. H ∨ ~R",A,philosophy,A|B|C|D|E|F|G|H|I|J
+10790,"The principle Arthur calls ""the greater moral evil rule""says that
+A. morality itself is a great evil.
+B. people should always strive to commit the lesser evil, even if it results in personal gain.
+C. the person who commits the greater evil is the one who is morally responsible for the situation.
+D. people are entitled to keep their earnings only if there is no way for them to prevent a greater evil by giving them away.
+E. people are morally obligated to share their wealth if it can prevent a greater evil.
+F. being rich is a great moral evil, and as such we should all strive to live on a moderate income.
+G. the greater moral evil rule is a concept which states that it's always wrong to do evil, regardless of the circumstances.
+H. two moral evils do not make a moral good.
+I. people are allowed to do a smaller evil to prevent a greater one.
+J. the concept of evil is subjective and varies from person to person.",D,philosophy,A|B|C|D|E|F|G|H|I|J
+11005,"Critics of speech codes adopted in the 1980s and early 1990s argued that these codes violated which of the following principles?
+A. freedom of speech
+B. freedom of the press
+C. right to bear arms
+D. right to privacy",B,philosophy,A|B|C|D
+10923,"When did the first Jaina temples appear?
+A. Eighteenth century CE
+B. Eleventh century BCE
+C. First century CE
+D. Fifth century BCE
+E. Second century CE
+F. Tenth century BCE
+G. Sixth century CE
+H. Third century BCE
+I. Fifth century CE
+J. Eighth century CE",I,philosophy,A|B|C|D|E|F|G|H|I|J
+10883,"""To be valid, the minor premise must either agree with the antecedent, or disagree with the consequent"" is a requirement for
+A. a categorical enthymeme
+B. a conditional syllogism
+C. a disjunctive inference
+D. a distributive syllogism
+E. a hypothetical syllogism
+F. a conjunctive enthymeme
+G. disjunctive enthymeme
+H. a categorical syllogism
+I. a disjunctive syllogism
+J. a conjunctive syllogism",B,philosophy,A|B|C|D|E|F|G|H|I|J
