@@ -1,0 +1,501 @@
+question_no,question,correct_answer,category,labels
+mmlu-abstract_algebra-00019,"Statement 1| Every group of order p^2 where p is prime is Abelian. Statement 2 | For a fixed prime p a Sylow p-subgroup of a group G is a normal subgroup of G if and only if it is the only Sylow p-subgroup of G.
+A. True, True
+B. False, False
+C. True, False
+D. False, True",A,abstract_algebra,A|B|C|D
+mmlu-abstract_algebra-00040,"The set of integers Z with the binary operation ""*"" defined as a*b =a +b+ 1 for a, b in Z, is a group. The identity element of this group is
+A. 0
+B. 1
+C. -1
+D. 12",C,abstract_algebra,A|B|C|D
+mmlu-abstract_algebra-00054,"Find the degree for the given field extension Q(sqrt(2)) over Q.
+A. 0
+B. 2
+C. 1
+D. 3",B,abstract_algebra,A|B|C|D
+mmlu-abstract_algebra-00056,"Statement 1 | 4x - 2 is irreducible over Z. Statement 2 | 4x - 2 is irreducible over Q.
+A. True, True
+B. False, False
+C. True, False
+D. False, True",D,abstract_algebra,A|B|C|D
+mmlu-abstract_algebra-00029,"Statement 1 | The homomorphic image of a cyclic group is cyclic. Statement 2 | The homomorphic image of an Abelian group is Abelian.
+A. True, True
+B. False, False
+C. True, False
+D. False, True",A,abstract_algebra,A|B|C|D
+mmlu-abstract_algebra-00025,"Let G denoted the set of all n x n non-singular matrices with rational numbers as entries. Then under multiplication G is a/an
+A. subgroup
+B. finite abelian group
+C. infinite, non abelian group
+D. ininite, abelian",C,abstract_algebra,A|B|C|D
+mmlu-abstract_algebra-00032,"Statement 1 | In a finite dimensional vector space every linearly independent set of vectors is contained in a basis. Statement 2 | If B_1 and B_2 are bases for the same vector space, then |B_1| = |B_2|.
+A. True, True
+B. False, False
+C. True, False
+D. False, True",A,abstract_algebra,A|B|C|D
+mmlu-abstract_algebra-00066,"Statement 1 | If R is a ring and f(x) and g(x) are in R[x], then deg (f(x)+g(x)) = maximum (deg f(x), deg g(x)). Statement 2 | If F is a field then every ideal of F[x] is principal.
+A. True, True
+B. False, False
+C. True, False
+D. False, True",D,abstract_algebra,A|B|C|D
+mmlu-abstract_algebra-00093,"Find the maximum possible order for an element of S_n for n = 6.
+A. 6
+B. 12
+C. 30
+D. 105",A,abstract_algebra,A|B|C|D
+mmlu-abstract_algebra-00086,"Statement 1 | If H and K are subgroups of a group G, then |HK| = |H||K|/|H intersection K|. Statement 2 | A group of order 2p where p is an odd prime is cyclic or isomorphic to D_p.
+A. True, True
+B. False, False
+C. True, False
+D. False, True",A,abstract_algebra,A|B|C|D
+mmlu-abstract_algebra-00057,"Find the generator for the finite field Z_11.
+A. 1
+B. 2
+C. 3
+D. 4",B,abstract_algebra,A|B|C|D
+mmlu-abstract_algebra-00050,"Statement 1 | Every solvable group is of prime-power order. Statement 2 | Every group of prime-power order is solvable.
+A. True, True
+B. False, False
+C. True, False
+D. False, True",D,abstract_algebra,A|B|C|D
+mmlu-abstract_algebra-00091,"Find all cosets of the subgroup 4Z of 2Z.
+A. 4Z
+B. 4Z, 2 + 4Z
+C. 2Z
+D. Z",B,abstract_algebra,A|B|C|D
+mmlu-abstract_algebra-00046,"Statement 1 | A homomorphism may have an empty kernel. Statement 2 | It is not possible to have a nontrivial homomorphism of some finite group into some infinite group.
+A. True, True
+B. False, False
+C. True, False
+D. False, True",B,abstract_algebra,A|B|C|D
+mmlu-abstract_algebra-00083,"Statement 1 | If a group has an element of order 10, then it has elements of orders 1, 2, and 5. Statement 2 | If a group has an element of order 2 and an element of order 3, then it has an element of order 6.
+A. True, True
+B. False, False
+C. True, False
+D. False, True",C,abstract_algebra,A|B|C|D
+mmlu-abstract_algebra-00096,"Find all zeros in the indicated finite field of the given polynomial with coefficients in that field. x^2 + 1 in Z_2
+A. 0
+B. 1
+C. 0,1
+D. 2",B,abstract_algebra,A|B|C|D
+mmlu-abstract_algebra-00001,"Let p = (1, 2, 5, 4)(2, 3) in S_5 . Find the index of <p> in S_5.
+A. 8
+B. 2
+C. 24
+D. 120",C,abstract_algebra,A|B|C|D
+mmlu-abstract_algebra-00028,"Statement 1 | The image of a group of 6 elements under a homomorphism may have 12 elements. Statement 2 | There is a homomorphism of some group of 6 elements into some group of 12 elements.
+A. True, True
+B. False, False
+C. True, False
+D. False, True",D,abstract_algebra,A|B|C|D
+mmlu-abstract_algebra-00061,"Statement 1 | The set of 2 x 2 matrices with integer entries and nonzero determinant is a group under matrix multiplication. Statement 2 | The set of 2 x 2 matrices with integer entries and determinant 1 is a group under matrix multiplication.
+A. True, True
+B. False, False
+C. True, False
+D. False, True",D,abstract_algebra,A|B|C|D
+mmlu-abstract_algebra-00012,"Find the order of the factor group (Z_11 x Z_15)/(<1, 1>)
+A. 1
+B. 2
+C. 5
+D. 11",A,abstract_algebra,A|B|C|D
+mmlu-high_school_microeconomics-04533,"You are told that the income elasticity for DVDs is + 1.5. This means that
+A. a 10 percent increase in income produces a 15 percent increase in consumption of DVDs. DVDs are a normal luxury good.
+B. a 10 percent increase in income produces a 15 percent increase in consumption of DVDs. DVDs are an inferior good.
+C. a 10 percent increase in income produces a 15 percent decrease in consumption of DVDs. DVDs are an inferior good.
+D. a 10 percent increase in the price of DVDs produces a 15 percent decrease in consumption of DVDs. DVDs are a price elastic good.",A,high_school_microeconomics,A|B|C|D
+mmlu-high_school_microeconomics-04645,"Which of the following is a fundamental aspect of the free market system?
+A. A high degree of government involvement.
+B. Public ownership of resources.
+C. Private property.
+D. Central planners set wages and prices.",C,high_school_microeconomics,A|B|C|D
+mmlu-high_school_microeconomics-04686,"Economics is best described as
+A. the study of how scarce material wants are allocated between unlimited resources.
+B. the study of how scarce labor can be replaced by unlimited capital.
+C. the study of how decision makers choose the best way to satisfy their unlimited material wants with a scarce supply of resources.
+D. the study of how unlimited material wants can best be satisfied by allocating limitless amounts of productive resources.",C,high_school_microeconomics,A|B|C|D
+mmlu-high_school_microeconomics-04707,"If Matt's total utility from consuming bratwurst increased at a constant rate, no matter how many bratwurst Matt consumed, what would Matt's demand curve for bratwurst look like?
+A. Vertical
+B. Horizontal
+C. Downward sloping
+D. Upward sloping",B,high_school_microeconomics,A|B|C|D
+mmlu-high_school_microeconomics-04721,"Assume a firm hires labor for $15 each and sells its products for $3 each. If the MP of the 3rd worker is 10, which of the following statements would be the most true?
+A. The firm should hire more labor so that the MRPL will increase.
+B. The firm should hire more labor so that the MRPL will decrease.
+C. The firm should hire less labor so that the MRPL will increase.
+D. The firm should hire less labor so that the MRPL will decrease.",B,high_school_microeconomics,A|B|C|D
+mmlu-high_school_microeconomics-04652,"Labor, human capital, entrepreneurship, natural resources, and physical capital are all examples of which of the following?
+A. Public goods
+B. Inferior goods
+C. Factors of production
+D. Outputs",C,high_school_microeconomics,A|B|C|D
+mmlu-high_school_microeconomics-04716,"The basis for the answer in number 1 is
+A. P or wage rate of labor > MRP of labor and with one additional unit of labor, wage rate < MRP.
+B. P or wage rate of labor < MRP of labor and with one additional unit of labor WI, > MRP.
+C. total revenue is at a maximum.
+D. total output is at a maximum.",B,high_school_microeconomics,A|B|C|D
+mmlu-high_school_microeconomics-04558,"When a good is taxed, the tax burden falls mainly on the consumer if
+A. the demand is inelastic and the supply is inelastic
+B. the demand is inelastic and the supply is elastic
+C. the demand is elastic and the supply is inelastic
+D. the demand is elastic and the supply is elastic",B,high_school_microeconomics,A|B|C|D
+mmlu-high_school_microeconomics-04519,"Which of the following conditions is characteristic of oligopoly?
+A. A rival firm matches price decreases of rivals, but fails to match any price increases of rivals.
+B. A rival firm matches price increases of rivals, but fails to match any price decrease of rivals.
+C. A rival firm fails to match both price increases or price decreases of rivals.
+D. (I)) Rival firms act independently of each other.",A,high_school_microeconomics,A|B|C|D
+mmlu-high_school_microeconomics-04663,"The demand curve for a perfectly competitive firm's product is
+A. downward sloping and equal to the market demand curve.
+B. perfectly elastic.
+C. perfectly inelastic.
+D. kinked at the going market price.",B,high_school_microeconomics,A|B|C|D
+mmlu-high_school_microeconomics-04696,"The greater (higher) the wage elasticity of demand, the
+A. greater the proportion of capital costs to labor costs in the production of goods.
+B. greater the price elasticity for the product produced by labor.
+C. the smaller the number of substitutes for labor.
+D. the smaller the time period.",B,high_school_microeconomics,A|B|C|D
+mmlu-high_school_microeconomics-04693,"Which of the following might explain how a price decrease might cause a decrease in quantity demanded and an upward-sloping demand curve?
+A. The good is inferior and the income effect is stronger than the substitution effect.
+B. The good is normal and the income effect is stronger than the substitution effect.
+C. The good is normal and the income effect is weaker than the substitution effect.
+D. The good is inferior and a luxury.",A,high_school_microeconomics,A|B|C|D
+mmlu-high_school_microeconomics-04506,"Patents, control of resources, economies of scale, and exclusive licenses are
+A. all requirements for price discrimination
+B. required in order for a firm to earn short-run profits
+C. all sources of elastic demand
+D. all barriers to entry",D,high_school_microeconomics,A|B|C|D
+mmlu-high_school_microeconomics-04569,"A minimum wage in the market for fast-food workers is likely to produce
+A. an increase in the demand for fast-food workers.
+B. a decrease in the supply of fast-food workers.
+C. a shortage of fast-food workers.
+D. a surplus of fast-food workers.",D,high_school_microeconomics,A|B|C|D
+mmlu-high_school_microeconomics-04511,"Which of the following statements is accurate in regard to a perfectly competitive firm?
+A. Demand is downward-sloping.
+B. The demand curve lies above the marginal revenue curve.
+C. Price is determined by the equilibrium in the entire market.
+D. Average revenue differs from price.",C,high_school_microeconomics,A|B|C|D
+mmlu-high_school_microeconomics-04660,"An industry described as an oligopoly would most likely have
+A. normal profits in the long run.
+B. no opportunities for collusive behavior.
+C. significant barriers to entry.
+D. price-taking behavior.",C,high_school_microeconomics,A|B|C|D
+mmlu-high_school_microeconomics-04632,"The price elasticity of demand for a product is greater if
+A. the proportion of the good of the consumer's budget is high.
+B. the period of time to respond to a price change is short.
+C. the number of substitute products is limited.
+D. the product is a necessity.",A,high_school_microeconomics,A|B|C|D
+mmlu-high_school_microeconomics-04529,"When a negative externality exists as the result of the production of a good, the socially optimal quantity of output could be achieved by
+A. free market capitalism
+B. placing limits on the quantity that can be produced
+C. government purchases of the good
+D. setting a minimum on the quantity that can be produced",B,high_school_microeconomics,A|B|C|D
+mmlu-high_school_microeconomics-04661,"Which of the following is correct about the demand for labor?
+A. The demand for labor is independent of the demand for other inputs or resources.
+B. The demand for labor is independent of the demand for the products produced by labor.
+C. The demand for labor is independent of the availability of other inputs or resources.
+D. The demand for labor is derived from the demand for the products produced by labor.",D,high_school_microeconomics,A|B|C|D
+mmlu-high_school_microeconomics-04656,"At the birthday party of your best friend, you see Skylar help himself to a second piece of cake. For this individual, it must be the case that
+A. the marginal benefit of the second piece of cake is less than the marginal cost.
+B. the total benefit received from eating cake is falling.
+C. the ratio of marginal benefit over marginal cost is less than one.
+D. the marginal benefit of the second piece of cake is greater than the marginal cost.",D,high_school_microeconomics,A|B|C|D
+mmlu-prehistory-10090,"What do the amount of grave goods buried with the children at Sungir' indicate?
+A. The tribe spent most of their time carving beads.
+B. The tribe was involved in an intricate trade network.
+C. The tribe had a complex system of inherited social statuses.
+D. The children were sometimes leaders of the tribe.",C,prehistory,A|B|C|D
+mmlu-prehistory-10336,"How can the paleoanthropologist determine if a species is bipedal?
+A. The structure of the innominate, including the ilium and ischium
+B. The position of the foramen magnum
+C. The absence of a divergent big toe
+D. All the above",D,prehistory,A|B|C|D
+mmlu-prehistory-10123,"When the Spanish explorer Hernando de Soto crossed a portion of the North American continent, his expedition encountered direct descendants of which people?
+A. Mississippian
+B. Adena
+C. Ancestral Puebloan
+D. Kwakiutl",A,prehistory,A|B|C|D
+mmlu-prehistory-10238,"The death of Qin Dynasty emperor Ying Zheng was marked by what elaborate memorial?
+A. An enormous mortuary temple filled with gold and gems.
+B. An enormous pyramid constructed out of millions of huge limestone blocks.
+C. The collective suicide of 60 members of the royal family.
+D. An 8,000-member life-sized terra cotta army.",D,prehistory,A|B|C|D
+mmlu-prehistory-10076,"Which crop is South America's most significant agricultural contribution to Europe?
+A. rice
+B. potatoes
+C. squash
+D. beans",B,prehistory,A|B|C|D
+mmlu-prehistory-10310,"The idea that cultures change through time in relation to their environments, along many different paths, is known as:
+A. unilineal evolution.
+B. environmental uniformitarianism.
+C. multicultural adaptation.
+D. multilineal evolution.",D,prehistory,A|B|C|D
+mmlu-prehistory-10161,"Which of the following first described human culture according to a predictable chronology of a Stone Age, Bronze Age, and Iron Age?
+A. uniformitarianism
+B. multilinear evolution
+C. three-age system
+D. . triple-age catastrophism",C,prehistory,A|B|C|D
+mmlu-prehistory-10198,"Homo erectus differed from Homo habilis in which way?
+A. Erectus fossils are found only in Africa.
+B. Erectus possessed a smaller brain.
+C. Erectus possessed a larger brain.
+D. Erectus was a relatively short-lived species.",C,prehistory,A|B|C|D
+mmlu-prehistory-10175,"The population of the Valley of Mexico was supported by means of:
+A. long-distance trade, salt mining, and stone masonry.
+B. hunting and gathering, fishing, and cultivation of root crops.
+C. advanced medical, artisanal, and metallurgical technologies.
+D. agricultural irrigation, terraces, and artificially raised fields called chinampas.",D,prehistory,A|B|C|D
+mmlu-prehistory-10086,"In comparison to the Middle Paleolithic, Upper Paleolithic tool technologies:
+A. emphasized flakes over blades.
+B. changed rapidly.
+C. involved elaborate preparation of core tools.
+D. all of the above",B,prehistory,A|B|C|D
+mmlu-prehistory-10071,"The sophisticated stone tool making industry at the Pinnacle Point site in South Africa is evidence of:
+A. a 250,000-year-old tradition of hand axe production and use.
+B. a 71,000-year-old complex sequence of microblade production and use.
+C. an adaptation to hunting in colder environments.
+D. both a and c.",B,prehistory,A|B|C|D
+mmlu-prehistory-10284,"Which of the following is NOT one of Joseph Tainter's proposed causes for the collapse of ancient civilizations?
+A. resource depletion
+B. economic decline
+C. elite mismanagement
+D. epidemic disease",D,prehistory,A|B|C|D
+mmlu-prehistory-10216,"The Omo I cranium discovered along the Omo River in southern Ethiopia demonstrates:
+A. the evolution of anatomically modern humans from premodern species about 200,000 years ago in Africa.
+B. the simultaneous evolution of anatomically modern humans about 100,000 years ago in Africa and Europe.
+C. the development of a larger brain prior to the first evidence for tool making.
+D. both b and c.",A,prehistory,A|B|C|D
+mmlu-prehistory-10340,"Which of the following is the last to be occupied by human beings?
+A. New Guinea
+B. Australia
+C. New Zealand
+D. Timor",C,prehistory,A|B|C|D
+mmlu-prehistory-10172,"What is the difference between an absolute date and a relative date?
+A. An absolute date is known by everyone, while a relative date ranges from 30 to 50 years.
+B. A relative date is derived from radiometric dating techniques, while an absolute date is only associated with written documents.
+C. A relative date refers to a year or a range of years, while an absolute date indicates a chronological order.
+D. An absolute date refers to a year or a range of years, while a relative date indicates a chronological order.",D,prehistory,A|B|C|D
+mmlu-prehistory-10261,"Archaeological and genetic evidence indicates that the process of domestication involving the separation of wolves from dogs occurred about:
+A. 65,000 to no later than 48,000 years ago
+B. 45,000 to no later than 38,000 years ago
+C. 35,000 to no later than 18,000 years ago
+D. 15,000 to no later than 10,000 years ago",C,prehistory,A|B|C|D
+mmlu-prehistory-10044,"The Minoan economy may have been especially vulnerable to natural catastrophe because it relied heavily on:
+A. agriculture
+B. maritime trade
+C. metalworking
+D. slave labor",B,prehistory,A|B|C|D
+mmlu-prehistory-10233,"Inca architecture is noted for its:
+A. incorporation of wood, earth, and stone.
+B. unprecedented size and sophistication.
+C. precise jigsaw-like stone masonry.
+D. use of the vaulted arch.",C,prehistory,A|B|C|D
+mmlu-prehistory-10045,"The _______ developed one of the earliest kingdoms in South America, reaching its height at around _________.
+A. Moche; AD 400
+B. Wari; AD 100
+C. Inca; AD 200
+D. Maya; AD 400",A,prehistory,A|B|C|D
+mmlu-prehistory-10111,"The most obvious material symbols of ancient state societies are:
+A. stone tablets.
+B. pyramids.
+C. monumental works.
+D. irrigation canals.",C,prehistory,A|B|C|D
+mmlu-public_relations-13147,"Your client has asked you to develop a public relations campaign to promote a college tuition savings program using new technologies. What is the most appropriate first step?
+A. Research pricing and development costs for different services.
+B. Develop a survey to discover which factors impact families' savings.
+C. Conduct a situation analysis to gain a better understanding of the issue.
+D. Hold a focus group to determine which messages are most effective for the program.",C,public_relations,A|B|C|D
+mmlu-public_relations-13123,"Which type of measurement is the most effective choice for evaluating a campaign's impact on audience attitudes?
+A. preparing a content analysis of media coverage
+B. studying the content of blog postings about your issue
+C. analyzing pre and post sales reports for changes in sales
+D. conducting a pre and post analysis of constituents' opinions",D,public_relations,A|B|C|D
+mmlu-public_relations-13132,"Which of these sites offers 'microblogging?
+A. YouTube
+B. Facebook
+C. Wikipedia
+D. Twitter",D,public_relations,A|B|C|D
+mmlu-public_relations-13121,"Which form of communication is most effective in forming or changing predispositions toward an issue?
+A. Interpersonal
+B. Media
+C. Group
+D. Public",B,public_relations,A|B|C|D
+mmlu-public_relations-13066,"Which author emphasised strategy as achieving competitive advantage for an organization?
+A. Steyn (2003)
+B. Gregory (2006)
+C. Cutlip et al (2006)
+D. Henry (2006)",D,public_relations,A|B|C|D
+mmlu-public_relations-13050,"You are the vice president of public relations for a corporation that produces a well-known brand of food products. In the Albany, New York, market, one of your products has recently been found to have some contamination. While apparently not fatal, it has given a large number of consumers severe stomach cramps and other intestinal problems. The cause has been traced back to your product, which is sold throughout the nation. Your CEO wants to know what you would advise to keep the situation from becoming a public relations disaster. What should you recommend?
+A. Quickly investigate to make certain your product is definitely the cause of the illness.
+B. Stop all sales of the product throughout the nation and issue a recall for that product.
+C. Stop sales of the product in the Albany, New York, market and issue a recall for that product.
+D. Issue a press release to the Albany, New York, market explaining how to treat the symptoms.",B,public_relations,A|B|C|D
+mmlu-public_relations-13143,"Which of these should an objective NOT be?
+A. Broad
+B. Achievable
+C. Measurable
+D. Time-bound",A,public_relations,A|B|C|D
+mmlu-public_relations-13072,"A book launch would be what kind of common tactic?
+A. Competition
+B. Event
+C. Award
+D. Sponsorship",B,public_relations,A|B|C|D
+mmlu-public_relations-13073,"Newsletters generally fall in to which writing category?
+A. Media writing
+B. Personal writing
+C. Business writing
+D. Promotional writing",D,public_relations,A|B|C|D
+mmlu-public_relations-13091,"Which factors are mentioned that influence media coverage of a story?
+A. Content, quality of source, relevance
+B. Timing, content, media liaison
+C. Content, quality of source, human interest angle
+D. Timing, relevance, political slant",B,public_relations,A|B|C|D
+mmlu-public_relations-13093,"According to Macnamara's (2005) pyramid of evaluation, at which stage are opinion polls most useful?
+A. Inputs
+B. Outputs
+C. Outtakes
+D. Outcomes",C,public_relations,A|B|C|D
+mmlu-public_relations-13074,"The process of identifying publics who are involved and affected by a situation central to an organization is called a(n)
+A. exploratory survey
+B. situation interview
+C. communication audit
+D. stakeholder analysis",D,public_relations,A|B|C|D
+mmlu-public_relations-13075,"Which of the following Internet-related challenges is most significant in the public relations field?
+A. Representing clients using new social media environments
+B. Finding stable, cost-effective Internet providers
+C. Training staff to use social media
+D. Staying abreast of changing technology",D,public_relations,A|B|C|D
+mmlu-public_relations-13087,"You seek the counsel of one of your peers who designed and implemented a communication program that resulted in the successful permitting of an automotive recycling center, despite strong opposition from community organizations. You have to design a program to win approval for a similar project proposed by your company. Your peer gives you a brief piece of advice that succinctly describes the foundation of his successful program. What is most likely your peer's advice for a successful communication program?
+A. Solve their problems
+B. Kill them with kindness
+C. Expose them to ridicule
+D. Overwhelm them with facts",A,public_relations,A|B|C|D
+mmlu-public_relations-13094,"Tyler and his wife have been won over by the advertising campaign supporting Stan Johnson, who is running for mayor, so they put a 'Vote for Stan Johnson in November' sign in their front yard. Tyler and his wife are engaging in ________, the third step of the advertising campaign.
+A. identification
+B. legitimacy
+C. penetration
+D. participation",D,public_relations,A|B|C|D
+mmlu-public_relations-13129,"Which law restricts corporate communications for publicly traded companies before and during the period that new securities are being registered?
+A. Securities Act of 1933
+B. Sarbanes-Oxley Act of 2002
+C. Investment Advisers Act of 1940
+D. Investment Company Act of 1934",A,public_relations,A|B|C|D
+mmlu-public_relations-13059,"How much has the number of practitioners working in consultancies in the UK grown since 25 years ago?
+A. It hasn't
+B. Doubled
+C. Tripled
+D. Quadrupled",C,public_relations,A|B|C|D
+mmlu-public_relations-13107,"In recent years social media has had a major impact on the practice of public relations. In which of the following areas has the impact been greatest and experienced most immediately?
+A. Politics
+B. Retail business
+C. Automotive sales
+D. Nonprofits",A,public_relations,A|B|C|D
+mmlu-public_relations-13151,"Which fashion house sued for damages to its reputation after being accused of stealing a design?
+A. Dior
+B. Givenchy
+C. Chanel
+D. Lacroix",C,public_relations,A|B|C|D
+mmlu-public_relations-13117,"In the public relations field, what is the most common threat to a client-firm relationship?
+A. Clients' questions about costs
+B. Resistance to outside advice
+C. Superficial grasp of the client's unique problems
+D. Personality conflicts",A,public_relations,A|B|C|D
+mmlu-security_studies-13286,"Which of these statements is not applicable to the development of peace studies in the twentieth century?
+A. Within peace studies, one of the later developments was a major interest in conflict prevention, conflict resolution, and peacekeeping.
+B. At the height of the Cold War, peace studies was frequently labelled 'appeasement studies' and was bitterly opposed by critics.
+C. By the 1970s, prominent peace researchers were calling for a broadening in the remit of the field but were largely unsuccessful in their attempts.
+D. Peace studies sought to provide a more global and non-state centric view of major issues of conflict.",C,security_studies,A|B|C|D
+mmlu-security_studies-13311,"Which statement best describes commercial liberalism?
+A. Commercial liberalism is the newest and most important faction of liberalism; it advocates socialist economic principles in order to address inequalities in the distribution of wealth that threaten societal and regime security.
+B. Commercial liberalism is based on the idea that free-trade directly undermines the power of the state, and argues that the market should be regulated where possible by state actors. One flaw of commercial liberalism is that it reduces cooperation and can thus increase conflict between states.
+C. Commercial liberalism is probably the oldest faction of liberalism; advocating free trade as the free movement of goods and capital, it purports that the most rapid and efficient production of wealth occurs when governments do not restrict the economic activity of private actors and the free market.
+D. Commercial liberalism advocates the restraint of private enterprise and non-governmental activity in the economic sphere, arguing that interference will hinder economic prosperity.",C,security_studies,A|B|C|D
+mmlu-security_studies-13230,"What is the relationship between historical materialism and the global justice movement?
+A. Historical materialism as a paradigm is opposed to the broad goals of the global justice movement, which advocates an expansion of neo-liberalism in the aftermath of the global financial crisis.
+B. Historical materialism has an established history of supporting global justice and opposing inequality; during the Cold War it was the basis of opposition to repressive communist states.
+C. Historical materialism does not provide any unique perspective on capitalism, and is more concerned with the history of capitalist trade than with exploitation or alienation of populations in the system.
+D. Historical materialism can concern both human rights and economic rights. It has been an important part of anti-globalisation and alternative-globalisation movements, including the Occupy protests.",D,security_studies,A|B|C|D
+mmlu-security_studies-13168,"In what ways do theories of conventional and critical social constructivism differ?
+A. Conventional constructivists view constructivism as a bridge between rationalist and reflectivist approaches, enabling both to benefit from the insights of the other. Conversely, critical constructivists argue that this approach simply reproduces the binary distinctions that characterize positivist methodology.
+B. Critical constructivism regards the strength of social constructivism to be its ability to bridge rationalist and reflectivity approaches. Conversely, social constructivists regard this as an unhelpful regression to positivist binary frameworks of analysis.
+C. Conventional constructivism refers to the earlier works of social constructivist theorists that are characterised by a rejection of positivist methodology. Critical constructivists challenge these theories, embracing positivist methodologies in their work.
+D. Social constructivism is best understood as a uniform approach to the construction of social identities and security; although distinctions exist within the field, these are not easily defined as distinctive separate approaches.",A,security_studies,A|B|C|D
+mmlu-security_studies-13260,"Is TNC a new phenomenon?
+A. There is little evidence to substantiate the claim that there is a real and increasing threat posed by the scale and scope of transnational crime in the 1980s to 1990s beyond the consensus that concern over the levels of crime were generated by the military re-conceiving its role in light of the dissolution of the Cold War.
+B. Whereas illegal markets were territorially bounded and isolated in the past, the contemporary form illicit markets tend to be interrelated and mutually supporting and more embedded in the legal economy.
+C. TNC is a response by the dispossessed in response to the asymmetric economic development of nation states and the inequity of global market capitalism married with environmental constraints on development.
+D. Transnational crime is no longer the exclusive domain of certain geographic areas or ethnic groups becoming globalized in operation, increasing the number of groups and countries affected and increasing the size of the illegal market ratio to licit trade.",B,security_studies,A|B|C|D
+mmlu-security_studies-13203,"How does the social constructivist approach account for the process of militarization?
+A. By regarding security as a socially constructed concept, constructivists assert that militarization is the result of governmental decisions based on shared values and cultural norms that underpin their conception of what constitutes a security risk. Accordingly, different governments will identify different threats and react in different ways.
+B. Social constructivists tend to focus on the population rather than military as an area for study, thus regarding the process of militarization largely in terms of its impact on human security.
+C. Social constructivists assert that the process follows a popular recognition of empirically definable threats; when it is recognized that an issue poses a real and valid threat, it warrants militarization.
+D. In their uniform advocacy of human security and adoption of a human-centric approach to security studies, social constructivists regard militarization as a process that is detrimental to achieving wider security goals and actively encourage the demilitarization of the security system.",A,security_studies,A|B|C|D
+mmlu-security_studies-13300,"Why, in the contemporary studies of security, is the subject of energy security so important?
+A. There exists an array of contemporary challenges to energy security, ranging from resource scarcity concerns to dangers of political instability.
+B. The existence of reliable supplies of energy determines the ability of a nation to achieve economic development.
+C. Energy security encompasses a broad range of issues that are both contemporary and fundamental to security, ranging from the local and individual to the global scale.
+D. All of these options.",D,security_studies,A|B|C|D
+mmlu-security_studies-13376,"Which of the following reasons might influence a state's decision to join an alliance such as NATO?
+A. More powerful states may also create alliances in order to extend their protective umbrella over weaker friendly states.
+B. States may seek to join an alliance if they believe that their own resources are inadequate to maintain their sovereignty and security.
+C. An alliance can become attractive to states when a potential hegemonic power threatens the other states in that system.
+D. All of these options.",D,security_studies,A|B|C|D
+mmlu-security_studies-13195,"Which statement best describes Booth's attitude toward constructivism and post-structuralism within Critical Security Studies?
+A. Post-structuralism provides no basis for political action, being a dangerous mix of faux radicalism, relativism and obscurantism, whilst constructivism is an orientation to world politics rather than a specific political theory.
+B. Constructivism offers a number of specific political theories applicable to Critical Security Studies but all of these lack the tenability required in security studies. Post-structuralist theories similarly lack the durability desired by CSS scholars.
+C. Post-structuralism and constructivism are ill-defined theories that are better described as political orientations, applicable in vague terms but lacking the substance required by scholars in contemporary security studies.
+D. Constructivism is too dangerous a mix of political ideologies, combining elements of radicalism and relativism. Post-structuralism is more of an orientation to world politics rather than a specific and applicable political theory.",A,security_studies,A|B|C|D
+mmlu-security_studies-13324,"Which of the following ideas have become mainstreamed within human security since the Human Development Report?
+A. Limiting security analysis to military engagement is too restrictive.
+B. Security is a contestable concept.
+C. Focusing security only on violent conflicts is too restrictive.
+D. All of these options.",D,security_studies,A|B|C|D
+mmlu-security_studies-13224,"Which of the following statements is true within the postcolonial approach?
+A. The international system is shaped through colonised discourse that establishes notions of certain states as inferior to others.
+B. European practices of free trade and democracy are best suited to creating a peaceful and stable international system.
+C. With the end of the Second World War and gradual dissolution of the British Empire, much of postcolonialism is redundant.
+D. Colonial power exists only through the military actions of occupying states.",A,security_studies,A|B|C|D
+mmlu-security_studies-13330,"How does the preoccupation with human rights affect the human rights orientated school of liberalism?
+A. Modern human rights oriented liberalism is concerned with self-determination.
+B. Human rights orientated liberalism will advocate separatism where conflict and bloodshed seem inevitable without it.
+C. Human rights orientated liberalism is particularly focused on persons subject to economic, sexual, gender, religious, and political persecution, discrimination, or deprivation.
+D. All of these options.",D,security_studies,A|B|C|D
+mmlu-security_studies-13251,"Describe the relationship between the military security domain and social constructivism.
+A. It is possible to study military security through non-realist analytical lenses, and to adopt a social constructivist approach that regards cultural and social factors as being important focuses of study. This has led to claims that broader approaches to military endeavours should be adopted, including the proposed employment of social and development specialists in conflict situations.
+B. Social constructivists reject the foundations of realism upon which military security studies are based; in rejecting the empirical basis of security studies, the social constructivist approach becomes inadequate in its attempts to formulate military security theory.
+C. Social constructivism is based on philosophical ideas that directly contradict the foundations of military-centred theory. The tendency is for social constructivists to dismiss military endeavours as clumsy and as being detrimental to human security.
+D. In order to study military security, analysts must adopt a realist lens. However, this can later be combined with other approaches, including social constructivism, in order to consider the security of different referent objects such as the environment or human security.",A,security_studies,A|B|C|D
+mmlu-security_studies-13333,"What are the specific elements of a comprehensive national defence trade control system?
+A. Governments should include in their arms trade rules, laws, penalties for their violation.
+B. Governments should ensure that weapons producers mark their defence items with a unique marking.
+C. Government police and military forces should establish appropriate weapons stockpile security measures and national authorities should collect and destroy old, outdated, and excess weaponry.
+D. All of these options.",D,security_studies,A|B|C|D
+mmlu-security_studies-13212,"What factors facilitated the institutional innovation of security studies?
+A. The need for civilian expertise, a need driven by technological developments, resulted in a shift from targeted development of fast-changing technologies to deployment of a given technology.
+B. Theory was necessary because nuclear technology was inherently more empirical, seen as what would be controlled by the bottom line of probable occurrences in a given conflict situation - the game of deterrence.
+C. Broader political considerations about the potential implications of long-term mobilization resulted in a shift from tactical operations to long-term strategy.
+D. The combination of nuclear weapons and Cold War political considerations required a highly cohesive, strong military leadership to coordinate economic, political and military planning.",C,security_studies,A|B|C|D
+mmlu-security_studies-13391,"What is the future of WMD?
+A. The viability of the CWC and BCW providing a concrete basis in international law to prevent the proliferation of chemical and biological weapons is dubious. The Proliferation Security Initiative to prevent the illicit trade in materials relating to chemical and nuclear weapons is an equally piecemeal pursuit. Whilst they may serve some utility as a framework for diplomatic exchanges, they are essentially toothless bodies lacking the political will to establish an authority with the powers to police the control and use of these weapons.
+B. The International Non-proliferation Regime has been rendered effectively defunct in the post-Cold War climate. State actors seeking to develop their own weapons capabilities have de-stabilized norms governing the use and control of WMD. This has been evidenced by severe splits in the body following the 1998 Indian and Pakistani nuclear testing and the withdrawal of great power support following the US Senate's decision not to ratify the Comprehensive Test Ban Treaty.
+C. Contemporary concern has been pacified by the fact that WMD threat has greatly diminished with the end of the Cold War. A number of deployed Soviet (Russian) and strategic warheads and US tactical nuclear weapons have been withdrawn from service thereby removing the threat of total war by massive nuclear exchange.
+D. WMD terrorism poses a security threat that is not easily met by today's policy community or military establishments. The second strike rule is virtually obsolete because of the difficulty of locating such groups and deterrence is an unviable strategy given that objective of attacks are frequently politically, ideologically or religiously motivated.",D,security_studies,A|B|C|D
+mmlu-security_studies-13392,"In which ways does realism differ from social constructivism in the theorisation of identity within international relations?
+A. Social constructivism employs theories of causality in the study of international relations, in addition to prioritising the study of identity as a socially constructed theory. In contrast, realism regards state of actor behaviour in the international system to follow an 'action-response' pattern.
+B. Realism regards identity as a crucial point for consideration in international relations. Realist theory is based on the assumption that identity informs behaviour.
+C. Realism is based in the notion of causality whilst social constructivism relies on theories of identity that are based in intersubjective meanings.
+D. Social constructivists regard the state as an independent unit whose behaviour is shaped by the requirements of the international system, whilst realists regard state interaction as being the natural progression of identity formulation.",C,security_studies,A|B|C|D
+mmlu-security_studies-13387,"In the context of globalization, how can we best define the term 'development'?
+A. The term development refers to the human condition in which there is freedom from fear and want; there are sufficient resources to sustain life and this life can exist in a state free from the threat, or perceived threat, of sudden interruption.
+B. To be considered as developed, a nation must have achieved certain economic and political status within the global state system; the criterion for what constitutes a 'developed' state is thus defined by those requirements of interaction in this system.
+C. Development is a means to address the inequalities that accompany neoliberal globalization. In this context, development refers to the ability of a population or community to effectively utilize resources and increase efficiency in production and distribution, promoting the more equitable distribution of income within society.
+D. Development of a community refers to the ideological and ethical value systems to which its population subscribes. In the globalised international system this refers to the adoption of western liberal democratic ideology and free market economics.",C,security_studies,A|B|C|D
+mmlu-security_studies-13221,"What long-term trends can be foreseen in the concept of environmental security?
+A. In the post-9/11 reversion to traditional security thinking, environmental security as a concept is likely to enjoy continued attention from security analysts and policymakers.
+B. Increasing evidence of the negative effects of environmental insecurity may increasingly govern national security interests and behaviour. The relevance will increase until national unilateralist initiatives are taken to retain the social organization of the nation which may have the adverse affect of increasing the prospect of conflict.
+C. National security practices are the most effective means to achieving environmental security reforms to consolidate the socio-economic organizational base of the country against threat. The state on a practical level remains the most capable body - having the monopolization over the instruments of violence, and centralization of resources - to enter into trans-national agreements for the management of environmental constraints.
+D. The impact of environmental problems seems unlikely to diminish so that the relevance of environmental security for policy will likely increase, particularly multilateral action on common security concerns to achieve forms of social organization that are ecologically sustainable. In some sense, current practices of national security are an impediment to achieving environmental security for all people.",D,security_studies,A|B|C|D
+mmlu-security_studies-13323,"What is the significance of anarchy to the realist explanation of international politics?
+A. Anarchy means that the state exists as part of society being indistinguishable from national government and the domestic character of the state.
+B. Anarchy refers to the lack of over-arching power in the international system - there is no controlling power beyond the multiple states. In the absence of such authority, states have their own agenda for achieving security, and can determine their own goals and behaviour.
+C. Anarchy means that there is little continuity in a government's foreign policy over time. Leaders come and go and their foreign policy changes, which is reflective of different preoccupations and ideologies.
+D. Anarchy means that the structure of the international system is distinctive because states have a strong sense that they are part of a larger entity in international politics with overarching interests and goals, making association unlimited and important.",B,security_studies,A|B|C|D
