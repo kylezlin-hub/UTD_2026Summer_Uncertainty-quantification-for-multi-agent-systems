@@ -114,6 +114,10 @@ CONDITIONS = ["control", "knowledge_blind", "knowledge_oracle",
               "reasoning", "both_blind", "both_oracle"]
 KNOWLEDGE_CONDS = ("knowledge_blind", "knowledge_oracle")
 REAL_CONDITIONS = [c for c in CONDITIONS if c != "control"]
+# Conditions that have stochastic brief generation (4 instances)
+STOCHASTIC_SCAFFOLD_CONDS = ("knowledge_blind", "knowledge_oracle", "both_blind", "both_oracle")
+# Conditions with fixed templates (deterministic, no brief instances)
+FIXED_TEMPLATE_CONDS = ("control", "reasoning")
 OUT_DIR = HERE / "interventions"
 AGENTS = ["Agent1", "Agent2", "Agent3"]
 
@@ -492,6 +496,29 @@ def generate_brief(llm, q: DebateQuestion, options: dict[str, str], seed: int,
     return brief, leaked
 
 
+def generate_brief_instances(llm, q: DebateQuestion, options: dict[str, str],
+                            base_seed: int, num_instances: int = 4):
+    """Generate multiple independent brief instances (both blind and oracle).
+    
+    Returns a dict mapping brief_instance (1..num_instances) to 
+    {"blind": (text, leaked), "oracle": (text, leaked)}.
+    
+    Each instance uses a different seed to ensure independence.
+    """
+    instances = {}
+    for i in range(num_instances):
+        seed_offset = i * 100  # Use different seed ranges for each instance
+        blind_brief, blind_leaked = generate_brief(
+            llm, q, options, seed=base_seed + seed_offset, oracle=False)
+        oracle_brief, oracle_leaked = generate_brief(
+            llm, q, options, seed=base_seed + seed_offset + 500, oracle=True)
+        instances[i + 1] = {
+            "blind": (blind_brief, blind_leaked),
+            "oracle": (oracle_brief, oracle_leaked),
+        }
+    return instances
+
+
 # --------------------------------------------------------------------------- #
 # Solve passes for the four conditions
 # --------------------------------------------------------------------------- #
@@ -535,12 +562,16 @@ def solve_once(llm, q: DebateQuestion, condition: str, briefs: dict[str, str], s
 # Driver
 # --------------------------------------------------------------------------- #
 def load_done(path: Path) -> set:
+    """Load completed (question, condition, brief_instance, solver_draw) tuples."""
     done = set()
     if path.exists():
         for line in path.read_text(encoding="utf-8").splitlines():
             try:
                 d = json.loads(line)
-                done.add((d["question_no"], d["condition"], d["repeat"]))
+                # For backwards compatibility: if brief_instance/solver_draw missing, treat as legacy
+                brief_inst = d.get("brief_instance", 0)
+                solver_draw = d.get("solver_draw", d.get("repeat", 0))
+                done.add((d["question_no"], d["condition"], brief_inst, solver_draw))
             except (json.JSONDecodeError, KeyError):
                 continue
     return done
@@ -572,42 +603,68 @@ def run_generation(args, subset: pd.DataFrame):
     done = load_done(results_path)
 
     subset = subset.head(args.limit) if args.limit else subset
-    print(f"Generating interventions for {len(subset)} questions x {len(CONDITIONS)} conditions "
-          f"x {args.repeats} repeats  (backend={args.backend}, model={args.model_id})")
+    print(f"Generating interventions for {len(subset)} questions x {len(CONDITIONS)} conditions")
+    print(f"  Total measurements per question: {len(CONDITIONS)} * 8 = {len(CONDITIONS) * 8}")
+    print(f"  Stochastic scaffolds (S, C): 4 brief instances x 2 solver draws = 8 measurements")
+    print(f"  Fixed templates (R, control): 8 solver draws, no brief instances")
 
     for i, row in subset.reset_index(drop=True).iterrows():
         labels = infer_labels(row["question"])
         options = parse_options(row["question"])
         q = DebateQuestion("objective", row["question_no"], row["question"],
                             row["correct_answer"], labels, row.get("category", ""))
-        # two briefs (once per question): blind (leak-proof) + oracle (higher power)
-        # If --regenerate-briefs is set, always generate fresh briefs even if cached
-        if q.question_no not in briefs or args.regenerate_briefs:
-            blind_brief, blind_leaked = generate_brief(llm, q, options, seed=args.seed, oracle=False)
-            oracle_brief, oracle_leaked = generate_brief(
-                llm, q, options, seed=args.seed + 500, oracle=True)
-            rec = dict(question_no=q.question_no, dataset=row["dataset"],
-                       brief_blind=blind_brief, brief_oracle=oracle_brief,
-                       blind_leaked=blind_leaked, oracle_leaked=oracle_leaked,
-                       correct_answer=q.correct_answer)
-            append_jsonl(briefs_path, rec)
-            briefs[q.question_no] = rec
-        brief_texts = {"blind": briefs[q.question_no].get("brief_blind", ""),
-                       "oracle": briefs[q.question_no].get("brief_oracle", "")}
-        oracle_leaked = bool(briefs[q.question_no].get("oracle_leaked", False))
-
+        
+        # For each condition, determine whether to generate multiple brief instances or use fixed template
         for cond in CONDITIONS:
-            for rep in range(args.repeats):
-                if (q.question_no, cond, rep) in done:
-                    continue
-                seed = args.seed + 1000 * rep + 13 * CONDITIONS.index(cond)
-                pred, correct, raw = solve_once(llm, q, cond, brief_texts, seed)
-                append_jsonl(results_path, dict(
-                    question_no=q.question_no, dataset=row["dataset"], condition=cond,
-                    repeat=rep, seed=seed, pred=pred, correct=bool(correct),
-                    oracle_leaked=oracle_leaked,
-                    raw=raw[:800],
-                ))
+            if cond in STOCHASTIC_SCAFFOLD_CONDS:
+                # Stochastic scaffolds: generate 4 brief instances on-the-fly
+                # (not cached, always fresh to ensure independence across solver draws)
+                brief_instances = generate_brief_instances(
+                    llm, q, options, base_seed=args.seed, num_instances=4)
+                
+                # For each brief instance: 2 solver draws
+                for brief_inst_num in range(1, 5):
+                    brief_inst = brief_instances[brief_inst_num]
+                    blind_brief, blind_leaked = brief_inst["blind"]
+                    oracle_brief, oracle_leaked = brief_inst["oracle"]
+                    
+                    brief_texts = {
+                        "blind": blind_brief,
+                        "oracle": oracle_brief,
+                    }
+                    oracle_leaked_flag = bool(oracle_leaked or blind_leaked)
+                    
+                    # 2 solver draws per brief instance
+                    for solver_draw in range(1, 3):
+                        if (q.question_no, cond, brief_inst_num, solver_draw) in done:
+                            continue
+                        # Solver seed: base + 1000*(brief_instance-1) + 100*(solver_draw-1) + 13*condition_offset
+                        seed = (args.seed + 1000 * (brief_inst_num - 1) + 
+                               100 * (solver_draw - 1) + 13 * CONDITIONS.index(cond))
+                        pred, correct, raw = solve_once(llm, q, cond, brief_texts, seed)
+                        append_jsonl(results_path, dict(
+                            question_no=q.question_no, dataset=row["dataset"], condition=cond,
+                            brief_instance=brief_inst_num, solver_draw=solver_draw,
+                            seed=seed, pred=pred, correct=bool(correct),
+                            oracle_leaked=oracle_leaked_flag,
+                            raw=raw[:800],
+                        ))
+            else:
+                # Fixed templates (control, reasoning): no brief instances, just 8 solver draws
+                for solver_draw in range(1, 9):  # Always 8 solver draws
+                    if (q.question_no, cond, 0, solver_draw) in done:
+                        continue
+                    brief_texts = {}  # No briefs for these conditions
+                    seed = args.seed + 1000 * (solver_draw - 1) + 13 * CONDITIONS.index(cond)
+                    pred, correct, raw = solve_once(llm, q, cond, brief_texts, seed)
+                    append_jsonl(results_path, dict(
+                        question_no=q.question_no, dataset=row["dataset"], condition=cond,
+                        brief_instance=0, solver_draw=solver_draw,
+                        seed=seed, pred=pred, correct=bool(correct),
+                        oracle_leaked=False,
+                        raw=raw[:800],
+                    ))
+        
         if (i + 1) % 10 == 0:
             print(f"  ...{i + 1}/{len(subset)} questions done", flush=True)
     print(f"Done. Results -> {results_path}")
