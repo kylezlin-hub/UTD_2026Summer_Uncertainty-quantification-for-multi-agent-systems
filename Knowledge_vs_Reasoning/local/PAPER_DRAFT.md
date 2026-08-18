@@ -102,15 +102,15 @@ approximately 7–14 percentage points on average, including correct-to-incorrec
 Among genuine failures, scaffold effects are sharply heterogeneous but organized into stable
 failure categories. Persistent failures—those that fail to recover under informational or
 reasoning support—remain non-responsive even when tested with independently regenerated
-briefs and control samples (8/8 stable, 100%). Responsive failures—those that show recovery
-under some intervention—remain responsive as a category under fresh briefs (29/39 responsive
-cases remained responsive under independent regeneration; 74.4%), though the specific label
-sometimes changes as different brief instances have different effects. Variance decomposition
-shows that scaffold-instance variability (60–91%) dominates solver-stochasticity effects
-(1.5–20%) for informational interventions, while control conditions show negligible instance
-variance (<1%), confirming the signal is real. These findings establish that failure
-categories (persistent vs. responsive) are stable properties, but the magnitude of repair
-effects is highly dependent on which specific support instance is generated.
+briefs (robustness check on 98 persistent questions: 81% maintain the persistent phenotype
+under fresh briefs). Responsive failures—those that show recovery under some intervention—
+remain responsive as a category under fresh briefs (74.4% of responsive cases maintain
+responsive category status under independent regeneration), though effect magnitudes vary
+substantially. Variance decomposition reveals that brief-instance variance (60–91% of outcome
+variation) vastly dominates solver stochasticity (<2% in scaffolded conditions) and background
+noise (<1% in controls). These findings establish two critical asymmetries: failure categories
+are reproducible across brief instances, but repair magnitudes within the responsive category
+are highly dependent on which specific support instance is generated.
 
 Critically, repairability is not determined by baseline failure severity. Failures with
 similarly near-zero held-out baseline performance can respond radically differently to the same
