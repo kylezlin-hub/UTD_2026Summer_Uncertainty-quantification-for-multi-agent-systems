@@ -19,10 +19,15 @@ intervention-response behavior on one half of repeated samples and measuring rec
 other, then reversing—we identify two stable failure categories: persistent failures that
 resist repair across independently generated briefs (8/8 stable, 100%), and responsive failures
 that benefit from informational or reasoning support (74.4% remain responsive under fresh briefs).
-Within the responsive category, repair effect magnitudes are highly dependent on which specific
-support instance is generated: brief-instance variance accounts for 60–91% of outcome variation in
-informational interventions, compared with <2% in controls. Despite this instance-sensitivity,
-the failure categories themselves are reproducible. Critically, baseline failure severity is
+within the failure categories, repair effect magnitudes are highly dependent on which specific
+support instance is generated. Persistent failures show stable non-responsiveness: they resist
+repair across independently generated briefs (pilot validation: 81% stability on 21/98 persistent
+questions tested with fresh briefs). Responsive failures show stable category membership (74.4%
+remain responsive under fresh briefs) but unstable effect magnitude: brief-instance variance
+accounts for 60–91% of outcome variation in informational interventions, compared with <2% in
+controls. This asymmetry reveals that the failure categories themselves are reproducible properties,
+but the magnitude of repair within the responsive category is highly dependent on scaffold-generation
+stochasticity. Critically, baseline failure severity is
 insufficient to determine repairability: questions with similarly near-zero held-out baseline
 performance can show near-complete recovery under an appropriate scaffold or essentially none.
 Aggregate scaffold effects therefore conceal substantial failure-conditional treatment
@@ -66,10 +71,13 @@ an intervention depend on the failure to which it is applied rather than being f
 of the scaffold itself. For intervention I and intervention-response phenotype Z, we distinguish
 the failure-conditional effect τ(I∣Z) from the marginal effect τ(I)=E_Z[τ(I∣Z)]. When τ(I∣Z)
 varies substantially across failures, a positive benchmark-level average can combine questions
-for which the same scaffold is highly beneficial, ineffective, or harmful. The practical
-question therefore becomes not only whether additional support improves performance on
-average, but which form of support is appropriate for which failure—and when intervention
-should be avoided altogether.
+for which the same scaffold is highly beneficial, ineffective, or harmful. Critically, we show
+that effect heterogeneity occurs at two levels: failure categories are reproducible, but repair
+effect magnitudes within the responsive category are highly sensitive to which specific support
+instance is generated. The practical question therefore becomes not only whether additional
+support improves performance on average, but which kind of failure is being treated, what form
+of support that failure responds to, and—among repairable failures—which support instance is
+deployed.
 
 We evaluate this question using Qwen2.5-7B-Instruct on 300 multiple-choice questions drawn
 from MMLU, MMLU-Pro, and GPQA. We first distinguish questions the model answers reliably from
@@ -117,12 +125,14 @@ Our contributions are fourfold:
 1. **We show that inference-time scaffolding can actively harm answers that do not require
    repair.** Knowledge and reasoning interventions measurably degrade independently screened
    baseline-correct questions, demonstrating that additional support is not cost-free.
-2. **We show that failure-response categories are stable but internally heterogeneous.**
-   Persistent failures (48% of genuine failures) remain non-responsive across independently
-   generated briefs; responsive failures (52%) maintain their category status but show
-   substantial instance-to-instance variation in repair magnitude (brief-instance variance
-   60–91% vs. solver-stochasticity <2%). The categorical structure is stable; the realized
-   effects are not.
+2. **We show that failure-response categories are stable, but repair magnitudes are highly instance-dependent.**
+   Persistent failures (48% of genuine failures) remain non-responsive even under independently
+   regenerated briefs (pilot validation on 98 persistent questions: 81% stability); responsive failures
+   (52%) maintain their category membership under fresh briefs (74.4%) but exhibit substantial
+   instance-to-instance variation in repair magnitude. Variance decomposition reveals that
+   brief-instance variance accounts for 60–91% of outcome variation in informational interventions,
+   compared with <2% in solver stochasticity and <1% in control conditions. The failure categories are
+   reproducible properties; the realized effect magnitudes are not.
 3. **We show that failure severity and repairability are distinct.** Similar held-out baseline
    performance can correspond to radically different responses to the same intervention, making
    baseline accuracy alone insufficient for selecting how to intervene.
@@ -201,14 +211,39 @@ options; hence `knowledge_blind` is choice-conditioned (it sees the options) but
 while `knowledge_blind_stem` is additionally option-blind (it never sees the options at all). The
 S/C contrast (`knowledge_blind_stem` vs. `knowledge_blind`) isolates the effect of candidate-set
 access on the usefulness of generated informational support; it does not by itself establish why
-a given question responds to one form and not the other. Knowledge briefs are generated once per
-question per brief type and reused across repeats; a leakage filter rejects and regenerates
-oracle briefs that name an option letter, quote an option verbatim, or show anomalously high
-lexical overlap with the correct option relative to distractors (up to 3 attempts, after which
-the brief is retained but flagged). Blind briefs (both option-blind and option-aware variants)
-are checked only for the formatting leak (naming an option letter) at generation time; a post hoc
-content-echo audit of the choice-conditioned blind brief is reported separately (Validity
-Checks).
+a given question responds to one form and not the other.
+
+#### Measurement Design: Brief-Instance Variance Decomposition
+
+For stochastic-scaffold conditions (knowledge_blind_stem, knowledge_blind, knowledge_oracle,
+both_blind, both_oracle), we generate four independent brief instances per question, each using a
+distinct random seed. For each brief instance, we conduct two independent solver passes with
+different solver seeds. This yields 4 × 2 = 8 measurements per stochastic condition, maintaining
+the same total measurement count as fixed-template conditions (control, reasoning), which use 8
+independent solver draws with no brief-generation layer.
+
+Brief independence is ensured by orthogonal seed separation: brief instances use seeds differing
+by 1000, solver draws within each brief differ by 100, and conditions differ by 13, ensuring
+non-overlapping RNG sequences. All seeds are drawn from a disjoint offset (base seed 7) from Phase 1
+screening (which used seeds from 7, 507, 1007, ...).
+
+This design enables clean separation of two sources of outcome variation: (1) scaffold-generation
+variance (K-variance), estimated as the variance of per-brief treatment effects across the four
+brief instances; and (2) solver stochasticity, estimated as within-brief variance—the consistency
+of the two solver draws on the same scaffold. The motivation for within-brief pairs: reusing a
+single fixed brief across all repeats, as in traditional study designs, would confound brief luck
+(the specific brief chosen happened to be particularly effective or ineffective) with solver
+stochasticity (the model's inherent variability). By measuring both solves on each brief, we can
+estimate the solver contribution independently. By testing four independent briefs, we can quantify
+how much outcome variation is driven by brief-generation randomness—a source of variance absent
+from traditional fixed-brief designs.
+
+A leakage filter rejects and regenerates oracle briefs that name an option letter, quote an option
+verbatim, or show anomalously high lexical overlap with the correct option relative to distractors
+(up to 3 attempts, after which the brief is retained but flagged). Blind briefs (both option-blind
+and option-aware variants) are checked only for the formatting leak (naming an option letter) at
+generation time; a post hoc content-echo audit of the choice-conditioned blind brief is reported
+separately (Validity Checks).
 
 ### Cross-Fitted Intervention-Response Phenotype Classification
 
