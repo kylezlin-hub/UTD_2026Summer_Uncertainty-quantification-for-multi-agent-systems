@@ -422,6 +422,20 @@ def protocol_sheet() -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+# Control chars disallowed in Excel's XML (openpyxl raises IllegalCharacterError on these).
+_ILLEGAL_XML_RE = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f]")
+
+
+def _strip_illegal_xml(df: pd.DataFrame) -> pd.DataFrame:
+    """Remove Excel-illegal control characters from all string cells (in place-safe copy)."""
+    if df is None or df.empty:
+        return df
+    for col in df.select_dtypes(include=["object"]).columns:
+        df[col] = df[col].map(
+            lambda v: _ILLEGAL_XML_RE.sub("", v) if isinstance(v, str) else v)
+    return df
+
+
 def run_one_seed(llm, questions, seed, dataset_label, run_dir, run_id, args):
     output_path = run_dir / f"debate_local_7b_{dataset_label}_s{seed}.xlsx"
     if not args.overwrite and output_path.exists() and workbook_is_complete(output_path):
@@ -446,6 +460,12 @@ def run_one_seed(llm, questions, seed, dataset_label, run_dir, run_id, args):
     judgments = empty_judgments()
     scores = score_mixed_debates(debates, judgments, output_path.name,
                                  q_source="confidence", metric_version=args.metric_version)
+
+    # Qwen occasionally emits control characters that openpyxl/Excel XML forbid;
+    # strip them from all string cells before writing (loses nothing meaningful).
+    debates = _strip_illegal_xml(debates)
+    round_state = _strip_illegal_xml(round_state)
+    scores = _strip_illegal_xml(scores)
 
     tmp_path = output_path.with_suffix(".tmp.xlsx")
     run_args = argparse.Namespace(**vars(args))
