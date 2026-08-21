@@ -1,16 +1,20 @@
 """generate_fig2_reproducibility.py -- Figure 2: response patterns are highly reproducible
-across solver samples when the scaffold (brief) is held fixed.
+across solver samples conditional on fixed scaffolds.
 
 Split A (repeats 0-3) and Split B (repeats 4-7) are two disjoint halves of the 8 solver
-repeats on the SAME fixed brief. We classify each of the 137 genuine failures on one split
-and measure its held-out effect on the other, so agreement across splits isolates
-solver-sample reproducibility with the scaffold instance held constant.
+repeats against the SAME fixed generated brief per condition. We classify each of the 137
+genuine failures on one split and measure its held-out effect on the other, so agreement
+across splits isolates solver-sample reproducibility with the scaffold instance held constant
+(NOT robustness to brief regeneration -- that is the separate fresh-regeneration analysis).
 
-  Figure 2A: row-normalized confusion matrix, Split-A label vs Split-B label
-             (row = P(Split-B category | Split-A category); the diagonal is reproducibility).
+  Figure 2A: row-normalized confusion matrix, Split-A response-category vs Split-B
+             response-category (cell = P(Split-B category | Split-A category); diagonal is
+             reproducibility). Counts shown in parentheses.
   Figure 2B: mean HELD-OUT Delta_S, Delta_C, Delta_R (measured on Split B) by Split-A
-             category, with paired-bootstrap 95% CIs. Effects line up with the category
-             defined on the *other* split, which is the reproducibility claim made visual.
+             category -- i.e. the A->B direction only (the reciprocal B->A profiles are
+             reported in the supplement). Error bars are 95% percentile bootstrap CIs from
+             N_BOOT question-level resamples. Non-circular: the category is set on Split A and
+             the effect is measured on the held-out Split B.
 
 Data: interventions/taxonomy_nested_results.csv, taxonomy_nested_agreement_stats.json.
 Usage: python generate_fig2_reproducibility.py
@@ -44,9 +48,9 @@ CAT_SHORT = {
 }
 # Okabe-Ito CVD-safe hues + redundant marker shape so identity is never color-alone.
 SERIES = [
-    ("delta_S_heldout_B", "Δ_S  (option-blind knowledge)", "#0072B2", "o"),
-    ("delta_C_heldout_B", "Δ_C  (choice-aware knowledge)", "#E69F00", "s"),
-    ("delta_R_heldout_B", "Δ_R  (reasoning scaffold)",     "#009E73", "^"),
+    ("delta_S_heldout_B", "Δ_S  (option-blind information)",   "#0072B2", "o"),
+    ("delta_C_heldout_B", "Δ_C  (choice-conditioned information)", "#E69F00", "s"),
+    ("delta_R_heldout_B", "Δ_R  (reasoning support)",          "#009E73", "^"),
 ]
 BLUES = LinearSegmentedColormap.from_list("seqblue", ["#f7fbff", "#08306b"])
 
@@ -92,8 +96,8 @@ def main():
     axA.set_yticklabels([CAT_SHORT[c] for c in CATS], fontsize=8)
     axA.set_xlabel("Split B category", fontsize=9)
     axA.set_ylabel("Split A category", fontsize=9)
-    axA.set_title(f"A. Cross-split phenotype agreement\n"
-                  f"row-normalized;  κ = {kappa:.2f},  agreement = {agree*100:.1f}%  (n = {n_real})",
+    axA.set_title(f"A. Cross-split response-category agreement\n"
+                  f"Agreement = {agree*100:.1f}%;  Cohen's κ = {kappa:.3f};  n = {n_real}",
                   fontsize=10, loc="left", fontweight="bold")
     cb = fig.colorbar(im, ax=axA, fraction=0.046, pad=0.03)
     cb.set_label("P(Split B category | Split A category)", fontsize=8)
@@ -119,19 +123,29 @@ def main():
     axB.set_yticks(y0)
     axB.set_yticklabels([CAT_SHORT[c] for c in CATS], fontsize=8)
     axB.set_xlim(-0.15, 1.12)
-    axB.set_xlabel("Held-out recovery Δ vs. control (rate), measured on Split B", fontsize=9)
-    axB.set_title("B. Held-out effect by Split-A category\n"
-                  "effects match the category set on the other split", fontsize=10,
+    axB.set_xlabel("Held-out effect Δ vs. control (accuracy)", fontsize=9)
+    axB.set_title("B. Held-out effects after Split-A classification\n"
+                  "Effects measured on Split B", fontsize=10,
                   loc="left", fontweight="bold")
-    axB.legend(loc="lower right", fontsize=8, frameon=True, framealpha=0.9)
+    axB.legend(loc="upper center", bbox_to_anchor=(0.5, -0.13), ncol=3, fontsize=8,
+               frameon=False, columnspacing=1.4, handletextpad=0.4)
     axB.grid(axis="x", color="#dddddd", lw=0.7)
     axB.set_axisbelow(True)
     for s in ("top", "right"):
         axB.spines[s].set_visible(False)
 
-    fig.suptitle("Response patterns are highly reproducible across solver samples with the "
-                 "scaffold held fixed (Qwen2.5-7B, 137 genuine failures)",
-                 fontsize=11, fontweight="bold", y=1.01)
+    fig.suptitle("Response patterns are highly reproducible across solver samples conditional "
+                 "on fixed scaffolds",
+                 fontsize=12, fontweight="bold", y=1.02)
+    # Explicit metadata + error-bar definition on the figure itself (also in the paper caption).
+    fig.text(0.5, -0.07,
+             "Qwen2.5-7B-Instruct; n = 137 baseline failures.   "
+             "Panel A: cells show P(Split-B category | Split-A category), row-normalized; counts in "
+             "parentheses.\nPanel B: points = mean held-out effect vs. control across questions; "
+             f"error bars = 95% bootstrap CIs ({N_BOOT:,} question-level resamples). "
+             "Panel B shows the A→B direction for clarity; the reciprocal B→A analysis yields the "
+             "same qualitative category-specific profiles (Supplement).",
+             ha="center", va="top", fontsize=7.5, color="#555555")
     png = OUT_DIR / "fig2_reproducibility.png"
     pdf = OUT_DIR / "fig2_reproducibility.pdf"
     fig.savefig(png, dpi=200, bbox_inches="tight")
