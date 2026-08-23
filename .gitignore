@@ -1,0 +1,90 @@
+# ---- Secrets / environment ----
+.env
+.env.*
+*.key
+*.json*
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+ColMAD/*
+New/*
+Pred_Minority/*
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# ---- Notebooks (keep .ipynb, drop checkpoint copies) ----
+*-checkpoint.ipynb
+
+# ---- Large binaries / installers / model weights ----
+*.exe
+OllamaSetup.exe
+*.gguf
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.onnx
+models--*/            # HuggingFace hub cache dirs
+
+# ---- Trained model artifacts (regenerable) ----
+*.pkl
+*.joblib
+
+# ---- Office temp / lock files ----
+~$*.pptx
+~$*.docx
+~$*.xlsx
+
+# ---- LLM judgment cache (regenerable with --refresh) ----
+*.judge.json
+
+# ---- Generated pipeline outputs (regenerable; uncomment to also ignore) ----
+# diagnostic_metric_results/
+# qwen_methodology_results/
+
+# ---- Knowledge_vs_Reasoning: heavy regenerable generation caches ----
+Knowledge_vs_Reasoning/interventions/solve_results.jsonl
+Knowledge_vs_Reasoning/interventions/knowledge_briefs.jsonl
+Knowledge_vs_Reasoning/interventions/selfconsistency_samples.jsonl
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*~
+
+# documentation markdown removed from remote (kept locally) 2026-08-22
+Knowledge_vs_Reasoning/PILOT_FINDINGS.md
+Knowledge_vs_Reasoning/RESEARCH_IDEA.md
+Knowledge_vs_Reasoning/local/ABSTRACT_AND_METHODS_UPDATE_SUMMARY.md
+Knowledge_vs_Reasoning/local/BRIEF_REGENERATION_ANALYSIS.md
+Knowledge_vs_Reasoning/local/BRIEF_REGENERATION_DESIGN.md
+Knowledge_vs_Reasoning/local/BRIEF_REGENERATION_EXPLAINED.md
+Knowledge_vs_Reasoning/local/BRIEF_REGENERATION_VISUAL.md
+Knowledge_vs_Reasoning/local/BRIEF_REGEN_JOB_DESIGN_EXPLAINED.md
+Knowledge_vs_Reasoning/local/IMPLEMENTATION_SUMMARY.md
+Knowledge_vs_Reasoning/local/LLAMA_PHASE2_FIX_SUMMARY.md
+Knowledge_vs_Reasoning/local/LLAMA_PHASE2_RUN_STATUS.md
+Knowledge_vs_Reasoning/local/LLAMA_REPLICATION_UPDATE.md
+Knowledge_vs_Reasoning/local/PAPER_DRAFT.md
+Knowledge_vs_Reasoning/local/PAPER_STATUS_AFTER_ABSTRACT_METHODS_UPDATE.md
+Knowledge_vs_Reasoning/local/PAPER_UPDATES_NEEDED.md
+Knowledge_vs_Reasoning/local/PHASE2_DESIGN_4BRIEFS_2DRAWS.md
+Knowledge_vs_Reasoning/local/PHASE2_DESIGN_VISUAL_GUIDE.md
+Knowledge_vs_Reasoning/local/QWEN_DATA_REVIEW.md
+Knowledge_vs_Reasoning/local/SESSION_SUMMARY_BRIEF.md
