@@ -1075,15 +1075,22 @@ class OllamaQwenPipeline:
             headers={"Content-Type": "application/json"},
             method="POST",
         )
-        try:
-            with urllib.request.urlopen(request, timeout=600) as response:
-                data = json.loads(response.read().decode("utf-8"))
-        except urllib.error.URLError as exc:
-            raise RuntimeError(
-                f"Could not call Ollama at {self.host}. Make sure Ollama is running "
-                f"and the model `{self.model_id}` is installed."
-            ) from exc
-        return str(data.get("message", {}).get("content", "")).strip()
+        # Retry transient failures (timeouts / dropped connections) so one stalled
+        # Ollama call does not abort a long unattended run. Everything is checkpointed,
+        # so at worst a retry re-does a single call.
+        last_exc = None
+        for attempt in range(5):
+            try:
+                with urllib.request.urlopen(request, timeout=600) as response:
+                    data = json.loads(response.read().decode("utf-8"))
+                return str(data.get("message", {}).get("content", "")).strip()
+            except (urllib.error.URLError, TimeoutError, ConnectionError, OSError) as exc:
+                last_exc = exc
+                time.sleep(min(30, 3 * (attempt + 1)))
+        raise RuntimeError(
+            f"Could not call Ollama at {self.host} after 5 attempts. Make sure Ollama is "
+            f"running and the model `{self.model_id}` is installed."
+        ) from last_exc
 
     def complete_many(
         self,
@@ -1730,6 +1737,22 @@ def objective_correlation_report(scores: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+# Control characters that Excel's XML (and openpyxl) reject with IllegalCharacterError.
+# Local LLMs occasionally emit these in free-text; strip them before any .to_excel().
+_ILLEGAL_XLSX_RE = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f]")
+
+
+def strip_excel_illegal_chars(df: pd.DataFrame) -> pd.DataFrame:
+    """Return a copy of df with Excel-illegal control chars removed from string cells."""
+    if df is None or df.empty:
+        return df
+    df = df.copy()
+    for col in df.select_dtypes(include=["object"]).columns:
+        df[col] = df[col].map(
+            lambda v: _ILLEGAL_XLSX_RE.sub("", v) if isinstance(v, str) else v)
+    return df
+
+
 def write_qwen_excel_report(
     path: Path,
     mode: str,
@@ -1740,6 +1763,9 @@ def write_qwen_excel_report(
 ) -> None:
     """Write debate traces, metadata, judgments, and scores to an Excel report."""
     path.parent.mkdir(parents=True, exist_ok=True)
+    debates = strip_excel_illegal_chars(debates)
+    judgments = strip_excel_illegal_chars(judgments)
+    scores = strip_excel_illegal_chars(scores)
     metadata = pd.DataFrame(
         [
             {"field": "run_mode", "value": mode},
