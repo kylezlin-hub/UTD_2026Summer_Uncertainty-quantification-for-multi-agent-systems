@@ -17,6 +17,7 @@ is identical to Exp3b so results are directly comparable.
 from __future__ import annotations
 
 import argparse
+import json
 import random
 import re
 import shutil
@@ -608,6 +609,49 @@ def make_debate_row(
 
 
 # ---------------------------------------------------------------------------
+# Question-level checkpoint helpers
+# ---------------------------------------------------------------------------
+
+def checkpoint_path(run_dir: Path) -> Path:
+    """Return path to the per-question JSONL checkpoint file."""
+    return run_dir / "exp4_checkpoint.jsonl"
+
+
+def load_checkpoint(run_dir: Path) -> tuple[list[dict], list[dict], set]:
+    """Load completed debate rows, state rows, and done question numbers."""
+    cp = checkpoint_path(run_dir)
+    rows, state_rows, done = [], [], set()
+    if not cp.exists():
+        return rows, state_rows, done
+    with cp.open("r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            entry = json.loads(line)
+            if entry.get("_type") == "debate":
+                rows.append(entry["data"])
+                done.add(entry["question_no"])
+            elif entry.get("_type") == "state":
+                state_rows.append(entry["data"])
+    print(f"Checkpoint: resuming after {len(done)} completed questions.", flush=True)
+    return rows, state_rows, done
+
+
+def save_checkpoint_debate(run_dir: Path, question_no, debate_row: dict,
+                           state_batch: list[dict]) -> None:
+    """Append one completed debate + its state rows to the checkpoint file."""
+    cp = checkpoint_path(run_dir)
+    cp.parent.mkdir(parents=True, exist_ok=True)
+    with cp.open("a", encoding="utf-8") as f:
+        f.write(json.dumps({"_type": "debate", "question_no": question_no,
+                            "data": debate_row}) + "\n")
+        for sr in state_batch:
+            f.write(json.dumps({"_type": "state", "question_no": question_no,
+                                "data": sr}) + "\n")
+
+
+# ---------------------------------------------------------------------------
 # Main debate loop
 # ---------------------------------------------------------------------------
 
@@ -616,20 +660,31 @@ def run_experiment_4_debates(
     predictor: MinorityPredictor,
     questions: list[DebateQuestion],
     seed: int,
+    run_dir: Path,
     args: argparse.Namespace,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Run debates with learned minority protection; return traces and state."""
-    rows: list[dict] = []
-    state_rows: list[dict] = []
+    # Load any previously completed questions from checkpoint
+    rows, state_rows, done_question_nos = load_checkpoint(run_dir)
     rng = random.Random(seed)
 
     for q_index, question in enumerate(questions):
+        # Advance RNG regardless so agent ordering is deterministic
+        agent_order = QWEN_AGENTS[:]
+        rng.shuffle(agent_order)
+
+        if question.question_no in done_question_nos:
+            print(
+                f"Exp4 question {q_index + 1}/{len(questions)}: {question.question_no} "
+                f"[skipped - already in checkpoint]",
+                flush=True,
+            )
+            continue
+
         print(
             f"Exp4 question {q_index + 1}/{len(questions)}: {question.question_no}",
             flush=True,
         )
-        agent_order = QWEN_AGENTS[:]
-        rng.shuffle(agent_order)
         all_rounds: list[dict] = []
         question_state_rows: list[dict] = []
         discard_reason = ""
@@ -729,10 +784,14 @@ def run_experiment_4_debates(
         final_answer, final_source = select_final_answer(
             llm, question, all_rounds, seed + q_index * 1000 + 999
         )
-        rows.append(make_debate_row(
+        debate_row = make_debate_row(
             question, all_rounds, args.model_id, final_answer, final_source
-        ))
+        )
+        rows.append(debate_row)
         state_rows.extend(question_state_rows)
+        # Save immediately so a crash/kill can resume from here
+        save_checkpoint_debate(run_dir, question.question_no, debate_row,
+                               question_state_rows)
 
     debates = pd.DataFrame(rows)
     if not debates.empty:
@@ -844,7 +903,8 @@ def run_one(
     source_file = output_path.name
     print(f"Running Exp4 seed {seed} under {run_dir}", flush=True)
 
-    debates, state = run_experiment_4_debates(llm, predictor, questions, seed, args)
+    debates, state = run_experiment_4_debates(llm, predictor, questions, seed,
+                                              run_dir, args)
     if debates.empty:
         raise RuntimeError("Experiment 4 generated no completed debate rows.")
 
