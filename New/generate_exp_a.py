@@ -54,8 +54,8 @@ from qwen_methodology_code import (
 # The 0.80 threshold was derived from actual judge scores in the baseline;
 # confidence is used as an online proxy with similar distribution.
 QUALITY_GATE    = 0.80   # confidence >= 0.80 (proxy for judge quality)
-P_TRUTH_TRIGGER = 0.50   # Youden-J threshold from OOF analysis
-P_TRUTH_STRONG  = 0.60   # above this → also apply to majority agents
+P_TRUTH_TRIGGER = 0.60   # raised from 0.50: at 0.60 precision=58%, at 0.50 only 28%
+P_TRUTH_STRONG  = 0.70   # raised from 0.60: also apply to majority when very confident
 BASE_TOKENS     = 220    # same for ALL agents — no extra budget
 
 
